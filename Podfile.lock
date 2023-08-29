@@ -1,3 +1,42 @@
-PODFILE CHECKSUM: 112d92763bdc51f258edd6bf7320d03eab0f0356
+PODS:
+  - AWSCore (2.23.5)
+  - AWSSQS (2.23.5):
+    - AWSCore (= 2.23.5)
+  - FairmaticSDK (1.0.0):
+    - FairmaticSDK/Standard (= 1.0.0)
+  - FairmaticSDK/Standard (1.0.0):
+    - AWSCore (~> 2.23.2)
+    - AWSSQS (~> 2.23.2)
+    - SQLite.swift (~> 0.12.2)
+  - SQLite.swift (0.12.2):
+    - SQLite.swift/standard (= 0.12.2)
+  - SQLite.swift/standard (0.12.2)
+
+DEPENDENCIES:
+  - FairmaticSDK (from `https://github.com/fairmatic/fairmatic-cocoapods`, tag `1.0.0`)
+
+SPEC REPOS:
+  trunk:
+    - AWSCore
+    - AWSSQS
+    - SQLite.swift
+
+EXTERNAL SOURCES:
+  FairmaticSDK:
+    :git: https://github.com/fairmatic/fairmatic-cocoapods
+    :tag: 1.0.0
+
+CHECKOUT OPTIONS:
+  FairmaticSDK:
+    :git: https://github.com/fairmatic/fairmatic-cocoapods
+    :tag: 1.0.0
+
+SPEC CHECKSUMS:
+  AWSCore: 609b7fbd59837525c818f3e8e3d42d3b427cadf6
+  AWSSQS: e60b27935d55eec8e155bc7ec265ea40ea7d353e
+  FairmaticSDK: 4e37e6345e6c25e3f7ea9bfb23b3b91ec364ea87
+  SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
+
+PODFILE CHECKSUM: ca054e1038e9732fe5ad6164e4b9050cb52ade4b
 
 COCOAPODS: 1.11.3
