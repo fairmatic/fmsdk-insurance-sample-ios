@@ -8,6 +8,8 @@ target 'FairmaticInsuranceSample' do
   # Pods for FairmaticInsuranceSample
   
   pod 'FairmaticSDK', :git => 'https://github.com/fairmatic/fairmatic-cocoapods', :tag => '1.0.0'
+  pod 'MBProgressHUD', '1.2.0'
+  pod 'SwiftyBeaver', '1.9.5'
 
 end
 

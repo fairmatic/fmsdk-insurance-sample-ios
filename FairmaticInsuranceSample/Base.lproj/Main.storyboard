@@ -1,42 +1,266 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Ha-md-2fn">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Off Duty View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FairmaticInsuranceSample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OffDutyViewController" id="BYZ-38-t0r" customClass="OffDutyViewController" customModule="FairmaticInsuranceSample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="883-dU-ITt">
-                                <rect key="frame" x="175" y="416" width="39" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53X-Az-K2C">
+                                <rect key="frame" x="16" y="224" width="361" height="64"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="bmH-0b-KP8"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="GO ON DUTY 🚗"/>
+                                <connections>
+                                    <action selector="goOnDutyButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="elP-2U-YsW"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click the below button when you are ready to go on duty!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4P-CS-LFW">
+                                <rect key="frame" x="12" y="133" width="369" height="43"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="53X-Az-K2C" secondAttribute="trailing" constant="16" id="WnZ-Hc-2fM"/>
+                            <constraint firstItem="53X-Az-K2C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="fku-rH-51F"/>
+                            <constraint firstItem="53X-Az-K2C" firstAttribute="top" secondItem="U4P-CS-LFW" secondAttribute="bottom" constant="48" id="hR1-sq-4W6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="U4P-CS-LFW" secondAttribute="trailing" constant="12" id="kTz-hS-8m2"/>
+                            <constraint firstItem="U4P-CS-LFW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="74" id="lU5-BB-cAx"/>
+                            <constraint firstItem="U4P-CS-LFW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="xjG-Bc-5L9"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="goOnDutyButton" destination="53X-Az-K2C" id="Rnh-uP-9so"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
+            <point key="canvasLocation" x="289" y="-356"/>
+        </scene>
+        <!--On Duty View Controller-->
+        <scene sceneID="5ri-0f-Uec">
+            <objects>
+                <viewController storyboardIdentifier="OnDutyViewController" id="FDa-jq-2C0" customClass="OnDutyViewController" customModule="FairmaticInsuranceSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xZ9-WB-ejv">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passenger in car - FALSE" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KYu-7f-yMH">
+                                <rect key="frame" x="12" y="95" width="369" height="21.666666666666671"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passenger waiting for pickup - FALSE" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24a-bN-ysH">
+                                <rect key="frame" x="12" y="132.66666666666666" width="369" height="21.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insurance period - 3" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7eo-ro-Dzs">
+                                <rect key="frame" x="12" y="178.33333333333334" width="369" height="25.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="vJo-uw-t3r">
+                                <rect key="frame" x="18" y="223.66666666666663" width="357" height="298"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Njn-NO-P4m">
+                                        <rect key="frame" x="0.0" y="0.0" width="357" height="64"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="TMf-2w-vFA"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Accept new ride request"/>
+                                        <connections>
+                                            <action selector="acceptNewRideRequestButtonTapped:" destination="FDa-jq-2C0" eventType="touchUpInside" id="LSo-Er-gAH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2s-1O-44F">
+                                        <rect key="frame" x="0.0" y="78.000000000000028" width="357" height="64"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="JAk-2h-VVz"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Pickup a passenger"/>
+                                        <connections>
+                                            <action selector="pickupPassengerButtonTapped:" destination="FDa-jq-2C0" eventType="touchUpInside" id="YPI-SR-dIN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cfa-i5-4JM">
+                                        <rect key="frame" x="0.0" y="156.00000000000003" width="357" height="64"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="kq4-kF-kgE"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Cancel a request "/>
+                                        <connections>
+                                            <action selector="canceRequestButtonTapped:" destination="FDa-jq-2C0" eventType="touchUpInside" id="ysc-BZ-zws"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMk-wr-GVo">
+                                        <rect key="frame" x="0.0" y="234" width="357" height="64"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="ZnK-gw-qPJ"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Drop a passenger"/>
+                                        <connections>
+                                            <action selector="dropPassengerButtonTapped:" destination="FDa-jq-2C0" eventType="touchUpInside" id="gbn-be-opF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJP-XS-88k">
+                                <rect key="frame" x="16" y="561.66666666666663" width="361" height="64"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Bdm-Qv-3tq"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="GO OFF DUTY 🏡"/>
+                                <connections>
+                                    <action selector="goOffDutyButtonTapped:" destination="FDa-jq-2C0" eventType="touchUpInside" id="Wa2-Xe-sbw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hws-hK-sr5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KYu-7f-yMH" firstAttribute="top" secondItem="hws-hK-sr5" secondAttribute="top" constant="36" id="GbM-Rn-ttG"/>
+                            <constraint firstItem="hws-hK-sr5" firstAttribute="trailing" secondItem="dJP-XS-88k" secondAttribute="trailing" constant="16" id="Ko5-qK-hzm"/>
+                            <constraint firstItem="7eo-ro-Dzs" firstAttribute="trailing" secondItem="24a-bN-ysH" secondAttribute="trailing" id="Q6V-E6-Reb"/>
+                            <constraint firstItem="7eo-ro-Dzs" firstAttribute="leading" secondItem="24a-bN-ysH" secondAttribute="leading" id="UK5-hJ-gsX"/>
+                            <constraint firstItem="hws-hK-sr5" firstAttribute="trailing" secondItem="KYu-7f-yMH" secondAttribute="trailing" constant="12" id="YRV-qG-B57"/>
+                            <constraint firstItem="24a-bN-ysH" firstAttribute="leading" secondItem="KYu-7f-yMH" secondAttribute="leading" id="b1l-Xd-LO6"/>
+                            <constraint firstItem="vJo-uw-t3r" firstAttribute="top" secondItem="7eo-ro-Dzs" secondAttribute="bottom" constant="20" id="bWj-TA-x9t"/>
+                            <constraint firstItem="24a-bN-ysH" firstAttribute="trailing" secondItem="KYu-7f-yMH" secondAttribute="trailing" id="dkZ-iR-Ict"/>
+                            <constraint firstItem="KYu-7f-yMH" firstAttribute="leading" secondItem="hws-hK-sr5" secondAttribute="leading" constant="12" id="j9r-b6-vwd"/>
+                            <constraint firstItem="24a-bN-ysH" firstAttribute="top" secondItem="KYu-7f-yMH" secondAttribute="bottom" constant="16" id="jl8-Jb-AN7"/>
+                            <constraint firstItem="vJo-uw-t3r" firstAttribute="leading" secondItem="hws-hK-sr5" secondAttribute="leading" constant="18" id="kiE-bm-KOw"/>
+                            <constraint firstItem="dJP-XS-88k" firstAttribute="leading" secondItem="hws-hK-sr5" secondAttribute="leading" constant="16" id="vog-Nh-hLM"/>
+                            <constraint firstItem="dJP-XS-88k" firstAttribute="top" secondItem="vJo-uw-t3r" secondAttribute="bottom" constant="40" id="x7M-x4-Iha"/>
+                            <constraint firstItem="hws-hK-sr5" firstAttribute="trailing" secondItem="vJo-uw-t3r" secondAttribute="trailing" constant="18" id="ynC-7Q-I6W"/>
+                            <constraint firstItem="7eo-ro-Dzs" firstAttribute="top" secondItem="24a-bN-ysH" secondAttribute="bottom" constant="24" id="zW2-Me-zve"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="acceptNewRideRequestButton" destination="Njn-NO-P4m" id="w3K-Xy-1sv"/>
+                        <outlet property="cancelRequestButton" destination="Cfa-i5-4JM" id="eB0-cy-ocS"/>
+                        <outlet property="dropPassengerButton" destination="HMk-wr-GVo" id="aKb-Jh-KEK"/>
+                        <outlet property="goOffDutyButton" destination="dJP-XS-88k" id="269-qy-QLA"/>
+                        <outlet property="insurancePeriodLabel" destination="7eo-ro-Dzs" id="cOG-Tw-WtJ"/>
+                        <outlet property="passengerInCarLabel" destination="KYu-7f-yMH" id="IQs-R6-idw"/>
+                        <outlet property="passengerWaitingLabel" destination="24a-bN-ysH" id="nJu-QE-FK2"/>
+                        <outlet property="pickupPassengerButton" destination="l2s-1O-44F" id="rza-un-f2K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dPn-rz-JvJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1040" y="-349"/>
+        </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="flC-7G-hiQ">
+            <objects>
+                <viewController storyboardIdentifier="SignUpViewController" id="3Ha-md-2fn" customClass="SignUpViewController" customModule="FairmaticInsuranceSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l5b-Kh-9gB">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GtU-i1-HNv">
+                                <rect key="frame" x="18" y="198" width="357" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5d-Uc-iyM">
+                                <rect key="frame" x="16" y="733" width="361" height="64"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="hd3-8d-oXy"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="SIGN UP"/>
+                                <connections>
+                                    <action selector="signupButtonTapped:" destination="3Ha-md-2fn" eventType="touchUpInside" id="jcL-k3-gQE"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NRn-XK-W2K">
+                                <rect key="frame" x="12" y="131" width="369" height="43"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PRX-Hl-vcE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="e5d-Uc-iyM" firstAttribute="leading" secondItem="PRX-Hl-vcE" secondAttribute="leading" constant="16" id="I1W-4f-ygE"/>
+                            <constraint firstItem="PRX-Hl-vcE" firstAttribute="trailing" secondItem="NRn-XK-W2K" secondAttribute="trailing" constant="12" id="IOS-1L-c1X"/>
+                            <constraint firstItem="GtU-i1-HNv" firstAttribute="top" secondItem="NRn-XK-W2K" secondAttribute="bottom" constant="24" id="KXM-gQ-P7o"/>
+                            <constraint firstItem="PRX-Hl-vcE" firstAttribute="bottom" secondItem="e5d-Uc-iyM" secondAttribute="bottom" constant="21" id="RjF-xz-N9e"/>
+                            <constraint firstItem="GtU-i1-HNv" firstAttribute="leading" secondItem="PRX-Hl-vcE" secondAttribute="leading" constant="18" id="Zdw-zH-CBB"/>
+                            <constraint firstItem="NRn-XK-W2K" firstAttribute="top" secondItem="PRX-Hl-vcE" secondAttribute="top" constant="72" id="dmf-X8-t1p"/>
+                            <constraint firstItem="PRX-Hl-vcE" firstAttribute="trailing" secondItem="e5d-Uc-iyM" secondAttribute="trailing" constant="16" id="dq1-ay-lhu"/>
+                            <constraint firstItem="NRn-XK-W2K" firstAttribute="leading" secondItem="PRX-Hl-vcE" secondAttribute="leading" constant="12" id="r4q-Ok-1ID"/>
+                            <constraint firstItem="PRX-Hl-vcE" firstAttribute="trailing" secondItem="GtU-i1-HNv" secondAttribute="trailing" constant="18" id="ti6-cT-0cv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="GtU-i1-HNv" id="w0I-Jo-UK0"/>
+                        <outlet property="signupButton" destination="e5d-Uc-iyM" id="Wdm-Ka-sJr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1zc-VV-SRK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-509.16030534351142" y="-349.29577464788736"/>
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
