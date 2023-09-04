@@ -93,8 +93,7 @@ private extension FairmaticManager {
                                           driverId: driverId,
                                           driverAttributes: driverAttributes)
         
-        configuration.driveDetectionMode = (currentlyActiveInsurancePeriod != nil) ?
-            DriveDetectionMode.autoON : DriveDetectionMode.autoOFF;
+        configuration.driveDetectionMode = .insurance
 
         Fairmatic.setupWith(configuration: configuration,
                             delegate: self) { (success, error) in
