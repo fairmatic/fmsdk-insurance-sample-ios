@@ -69,7 +69,7 @@ private extension FairmaticLiteLogger {
         line: Int = #line
     ) {
         #if DEBUG
-        print("\(level.initialCharacter) [\(fileString(from: file)):\(function):\(line)] \(message())\n")
+        print("\(level.initialCharacter) [\(fileString(from: file)):\(function):\(line)] \(message())")
         #endif
     }
 
