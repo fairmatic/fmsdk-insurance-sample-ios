@@ -33,9 +33,17 @@ final class SignUpViewController: UIViewController {
         
         signupButton.startAnimatingPressActions()
         signupButton.layer.cornerRadius = 8.0
+
+        emailTextField.keyboardType = .emailAddress
+        emailTextField.becomeFirstResponder()
+        
+        let tap = UITapGestureRecognizer(target: self,
+                                         action: #selector(Self.dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
     
     @IBAction func signupButtonTapped(_ sender: Any) {
+        emailTextField.resignFirstResponder()
         let driverId = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         
         guard let driverId = driverId, !driverId.isEmpty else {
@@ -45,6 +53,10 @@ final class SignUpViewController: UIViewController {
         
         userDefaultsManager.driverId = driverId
         delegate?.signupCompleted()
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
 
