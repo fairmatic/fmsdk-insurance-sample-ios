@@ -21,7 +21,7 @@
 		AC769FA22AA1ECDC00BCAF34 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC769FA12AA1ECDC00BCAF34 /* PermissionManager.swift */; };
 		AC769FA42AA1F47B00BCAF34 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC769FA32AA1F47B00BCAF34 /* UIButton+Extensions.swift */; };
 		AC769FA82AA1FB7B00BCAF34 /* UIStoryboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC769FA72AA1FB7B00BCAF34 /* UIStoryboard+Extensions.swift */; };
-		AC769FAA2AA1FC3200BCAF34 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC769FA92AA1FC3200BCAF34 /* Logger.swift */; };
+		AC850AC32AA5901B00703D6A /* FairmaticLiteLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC850AC22AA5901B00703D6A /* FairmaticLiteLogger.swift */; };
 		AEA756AD10A2A02F307A51D0 /* Pods_FairmaticInsuranceSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C924AC9D81285BEEC083B0C /* Pods_FairmaticInsuranceSample.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +45,7 @@
 		AC769FA12AA1ECDC00BCAF34 /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
 		AC769FA32AA1F47B00BCAF34 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		AC769FA72AA1FB7B00BCAF34 /* UIStoryboard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extensions.swift"; sourceTree = "<group>"; };
-		AC769FA92AA1FC3200BCAF34 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		AC850AC22AA5901B00703D6A /* FairmaticLiteLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairmaticLiteLogger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +90,7 @@
 		AC3CA46F2A9DCF3300135E48 /* FairmaticInsuranceSample */ = {
 			isa = PBXGroup;
 			children = (
+				AC850AC12AA5900A00703D6A /* Logger */,
 				AC769FAB2AA20FE900BCAF34 /* Managers */,
 				AC769FA62AA1FB6300BCAF34 /* Extensions */,
 				AC769F9F2AA1E99F00BCAF34 /* ViewControllers */,
@@ -98,7 +99,6 @@
 				AC3CA4792A9DCF3500135E48 /* Assets.xcassets */,
 				AC3CA47B2A9DCF3500135E48 /* LaunchScreen.storyboard */,
 				AC3CA47E2A9DCF3500135E48 /* Info.plist */,
-				AC769FA92AA1FC3200BCAF34 /* Logger.swift */,
 			);
 			path = FairmaticInsuranceSample;
 			sourceTree = "<group>";
@@ -132,6 +132,14 @@
 				AC769FA12AA1ECDC00BCAF34 /* PermissionManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		AC850AC12AA5900A00703D6A /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				AC850AC22AA5901B00703D6A /* FairmaticLiteLogger.swift */,
+			);
+			path = Logger;
 			sourceTree = "<group>";
 		};
 		D789BE092FF95383E818F74C /* Frameworks */ = {
@@ -262,9 +270,9 @@
 				AC769FA22AA1ECDC00BCAF34 /* PermissionManager.swift in Sources */,
 				AC769FA42AA1F47B00BCAF34 /* UIButton+Extensions.swift in Sources */,
 				AC769F9E2AA0C73B00BCAF34 /* Date+Extensions.swift in Sources */,
+				AC850AC32AA5901B00703D6A /* FairmaticLiteLogger.swift in Sources */,
 				AC769F922AA0B8B400BCAF34 /* SignUpViewController.swift in Sources */,
 				AC769F9C2AA0C2A800BCAF34 /* FairmaticManager.swift in Sources */,
-				AC769FAA2AA1FC3200BCAF34 /* Logger.swift in Sources */,
 				AC769F982AA0BD4A00BCAF34 /* OnDutyViewController.swift in Sources */,
 				AC769F942AA0BB2800BCAF34 /* FairmaticInsuranceUserDefaults.swift in Sources */,
 				AC769FA82AA1FB7B00BCAF34 /* UIStoryboard+Extensions.swift in Sources */,
@@ -429,7 +437,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -467,7 +475,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
