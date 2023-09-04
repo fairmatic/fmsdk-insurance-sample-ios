@@ -35,7 +35,7 @@ final class OffDutyViewController: UIViewController {
             if success {
                 self.delegate?.driverDidRequestToGoOnDuty()
             } else {
-                // Show error
+                log.error("Error in going on duty: \(String(describing: error))")
             }
         }
     }
