@@ -111,7 +111,7 @@ private extension OnDutyViewController {
     }
     
     private func refreshUI() {
-        log.info("Refreshing UI")
+        log.debug("Refreshing UI")
         
         let insurancePeriod = currentInsurancePeriod()
         let state: State = TripManager.shared.state

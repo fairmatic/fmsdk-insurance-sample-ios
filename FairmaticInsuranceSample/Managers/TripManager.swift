@@ -56,7 +56,7 @@ final class TripManager {
     // MARK: Functions
     
     func goOnDuty(completion: @escaping FairmaticCompletionHandler) {
-        log.info("Going on duty")
+        log.debug("Going on duty")
         state.isDriverOnDuty = true
         fairmaticUserDefaults.isDriverOnDuty = true
         setupOrTeardownPermissionManager()
@@ -64,7 +64,7 @@ final class TripManager {
     }
     
     func goOffDuty(completion: @escaping FairmaticCompletionHandler) {
-        log.info("Going off duty")
+        log.debug("Going off duty")
         state.isDriverOnDuty = false
         fairmaticUserDefaults.isDriverOnDuty = false
         setupOrTeardownPermissionManager()
@@ -72,14 +72,14 @@ final class TripManager {
     }
     
     func acceptNewPassengerRequest(completion: @escaping FairmaticCompletionHandler) {
-        log.info("Accepting new passenger request")
+        log.debug("Accepting new passenger request")
         state.passenegerWaitingForPickup = true
         fairmaticUserDefaults.isPassengerWaitingForPickup = true
         fairmaticManager.updateInsurancePeriodsBasedOnApplicationState(completion: completion)
     }
     
     func pickupPassenger(completion: @escaping FairmaticCompletionHandler) {
-        log.info("Picking up passenger")
+        log.debug("Picking up passenger")
         state.passengerInCar = true
         fairmaticUserDefaults.isPassengerInCar = true
         fairmaticManager.updateInsurancePeriodsBasedOnApplicationState(completion: completion)
@@ -87,14 +87,14 @@ final class TripManager {
     }
     
     func cancelRequest(completion: @escaping FairmaticCompletionHandler) {
-        log.info("Cancelling request")
+        log.debug("Cancelling request")
         state.passenegerWaitingForPickup = false
         fairmaticUserDefaults.isPassengerWaitingForPickup = false
         fairmaticManager.updateInsurancePeriodsBasedOnApplicationState(completion: completion)
     }
     
     func dropPassenger(completion: @escaping FairmaticCompletionHandler) {
-        log.info("Dropping passenger")
+        log.debug("Dropping passenger")
         state.passengerInCar = false
         fairmaticUserDefaults.isPassengerInCar = false
         fairmaticManager.updateInsurancePeriodsBasedOnApplicationState(completion: completion)
@@ -104,10 +104,10 @@ final class TripManager {
 extension TripManager {
     private func setupOrTeardownPermissionManager() {
         if (state.isDriverOnDuty) {
-            log.info("Driver is on duty, setting up permission manager")
+            log.debug("Driver is on duty, setting up permission manager")
             PermissionManager.setup()
         } else {
-            log.info("Driver is off duty, tearing down permission manager")
+            log.debug("Driver is off duty, tearing down permission manager")
             PermissionManager.teardown()
         }
     }

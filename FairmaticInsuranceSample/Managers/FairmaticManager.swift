@@ -88,7 +88,7 @@ private extension FairmaticManager {
                                           trialNumber: Int,
                                           totalRetryCount: Int) {
         let currentlyActiveInsurancePeriod = self.currentlyActiveInsurancePeriod
-        log.info("Initializing SDK for driver \(driverId) with current insurance period \(String(describing: currentlyActiveInsurancePeriod))")
+        log.debug("Initializing SDK for driver \(driverId) with current insurance period \(String(describing: currentlyActiveInsurancePeriod))")
         let configuration = Configuration(sdkKey: sdkKey,
                                           driverId: driverId,
                                           driverAttributes: driverAttributes)
@@ -155,31 +155,31 @@ private extension FairmaticManager {
 
 extension FairmaticManager: FairmaticDelegate {
     func processStart(ofDrive startInfo: DriveStartInfo) {
-        log.info("Fairmatic SDK started for drive with tracking id \(startInfo.trackingId ?? "nil")")
+        log.debug("Fairmatic SDK started for drive with tracking id \(startInfo.trackingId ?? "nil")")
     }
     
     func processResume(ofDrive resumeInfo: DriveResumeInfo) {
-        log.info("Fairmatic SDK resumed for drive with tracking id \(resumeInfo.trackingId ?? "nil")")
+        log.debug("Fairmatic SDK resumed for drive with tracking id \(resumeInfo.trackingId ?? "nil")")
     }
     
     func processAnalysis(ofDrive analyzedDriveInfo: AnalyzedDriveInfo) {
-        log.info("Fairmatic SDK analyzed drive with tracking id \(analyzedDriveInfo.trackingId ?? "nil")")
+        log.debug("Fairmatic SDK analyzed drive with tracking id \(analyzedDriveInfo.trackingId ?? "nil")")
     }
     
     func processPotentialAccidentDetected(_ accidentInfo: AccidentInfo) {
-        log.info("Fairmatic SDK detected potential accident with tracking id \(accidentInfo.trackingId ?? "nil")")
+        log.debug("Fairmatic SDK detected potential accident with tracking id \(accidentInfo.trackingId ?? "nil")")
     }
     
     func processAccidentDetected(_ accidentInfo: AccidentInfo) {
-        log.info("Fairmatic SDK detected accident with tracking id \(accidentInfo.trackingId ?? "nil")")
+        log.debug("Fairmatic SDK detected accident with tracking id \(accidentInfo.trackingId ?? "nil")")
     }
     
     func processEnd(ofDrive estimatedDriveInfo: EstimatedDriveInfo) {
-        log.info("Fairmatic SDK ended drive with tracking id \(estimatedDriveInfo.trackingId ?? "nil")")
+        log.debug("Fairmatic SDK ended drive with tracking id \(estimatedDriveInfo.trackingId ?? "nil")")
     }
     
     func settingsChanged(_ settings: Settings) {
-        log.info("Settings changed from FMSDK, and \(settings.errors.count) errors were found!")
+        log.debug("Settings changed from FMSDK, and \(settings.errors.count) errors were found!")
         
         settings.errors.forEach {
             print("Error from Fairmatic SDK: \($0.errorType)")
