@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var rootNavigationController: UINavigationController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        configureLoggerIfNeeded()
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
@@ -29,9 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 private extension AppDelegate {
     func reloadApplication() {
-        log.info("Reloading application")
+        log.debug("Reloading application")
         guard let driverId = FairmaticInsuranceUserDefaults.shared.driverId else {
-            log.info("Driver id not found, loading signup view controller")
+            log.debug("Driver id not found, loading signup view controller")
             TripManager.shared.goOffDuty { _, _ in }
             loadSignupViewController()
             return
@@ -47,9 +46,9 @@ private extension AppDelegate {
         
         showLoader()
         
-        log.info("Initializing SDK for driver id: \(driverId)")
+        log.debug("Initializing SDK for driver id: \(driverId)")
         FairmaticManager.shared.initializeSDKForDriverId(driverId: driverId) {
-            log.info("SDK initialized successfully")
+            log.debug("SDK initialized successfully")
             self.hideLoader()
             self.loadViewControllerAccordingToDuty()
         } failureHandler: { nsError in
@@ -79,21 +78,21 @@ private extension AppDelegate {
     }
     
     func loadOffDutyViewController() {
-        log.info("Loading off duty view controller")
+        log.debug("Loading off duty view controller")
         let offDutyViewController = OffDutyViewController.instantiateFromStoryboard()
         offDutyViewController.delegate = self
         showInNavigationController(viewController: offDutyViewController)
     }
     
     func loadOnDutyViewController() {
-        log.info("Loading on duty view controller")
+        log.debug("Loading on duty view controller")
         let onDutyViewController = OnDutyViewController.instantiateFromStoryboard()
         onDutyViewController.delegate = self
         showInNavigationController(viewController: onDutyViewController)
     }
     
     func loadSignupViewController() {
-        log.info("Loading signup view controller")
+        log.debug("Loading signup view controller")
         let signupViewController = SignUpViewController.instantiateFromStoryboard()
         signupViewController.delegate = self
         showInNavigationController(viewController: signupViewController)
@@ -120,17 +119,17 @@ private extension AppDelegate {
 
 extension AppDelegate: OffDutyViewControllerDelegate, OnDutyViewControllerDelegate, SignUpViewControllerDelegate {
     func signupCompleted() {
-        log.info("Signup completed")
+        log.debug("Signup completed")
         reloadApplication()
     }
     
     func driverDidRequestToGoOnDuty() {
-        log.info("Driver did request to go on duty")
+        log.debug("Driver did request to go on duty")
         loadViewControllerAccordingToDuty()
     }
     
     func driverDidRequestToGoOffDuty() {
-        log.info("Driver did request to go off duty")
+        log.debug("Driver did request to go off duty")
         loadViewControllerAccordingToDuty()
     }
 }
