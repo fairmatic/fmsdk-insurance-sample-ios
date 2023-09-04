@@ -94,7 +94,9 @@ final class TripManager {
         log.debug("Picking up passenger")
         synchronized(self) {
             state.passengerInCar = true
+            state.passenegerWaitingForPickup = false
             fairmaticUserDefaults.isPassengerInCar = true
+            fairmaticUserDefaults.isPassengerWaitingForPickup = false
             fairmaticManager.updateInsurancePeriodsBasedOnApplicationState(completion: completion)
         }
     }
