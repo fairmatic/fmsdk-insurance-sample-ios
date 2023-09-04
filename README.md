@@ -4,7 +4,7 @@ Sample app for insurance implementation using the Fairmatic SDK (docs.fairmatic.
 
 ## Pre-requisites
 
-- Xcode 14.0
+- Xcode 14.0 or later
 - Cocoapods
 
 ## Steps to run the app
