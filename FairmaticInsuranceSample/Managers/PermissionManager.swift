@@ -14,11 +14,15 @@ class PermissionManager: NSObject, CLLocationManagerDelegate {
     static var _sharedInstance: PermissionManager?
     
     public static func setup() {
-        self._sharedInstance = PermissionManager()
+        synchronized(self) {
+            self._sharedInstance = PermissionManager()
+        }
     }
 
     public static func teardown() {
-        self._sharedInstance = nil
+        synchronized(self) {
+            self._sharedInstance = nil
+        }
     }
 
     private var _locationManager: CLLocationManager?

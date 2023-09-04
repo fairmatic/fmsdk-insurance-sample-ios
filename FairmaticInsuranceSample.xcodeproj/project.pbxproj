@@ -22,6 +22,7 @@
 		AC769FA42AA1F47B00BCAF34 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC769FA32AA1F47B00BCAF34 /* UIButton+Extensions.swift */; };
 		AC769FA82AA1FB7B00BCAF34 /* UIStoryboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC769FA72AA1FB7B00BCAF34 /* UIStoryboard+Extensions.swift */; };
 		AC850AC32AA5901B00703D6A /* FairmaticLiteLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC850AC22AA5901B00703D6A /* FairmaticLiteLogger.swift */; };
+		AC850AC72AA5BBB800703D6A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC850AC62AA5BBB800703D6A /* Helpers.swift */; };
 		AEA756AD10A2A02F307A51D0 /* Pods_FairmaticInsuranceSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C924AC9D81285BEEC083B0C /* Pods_FairmaticInsuranceSample.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		AC769FA32AA1F47B00BCAF34 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		AC769FA72AA1FB7B00BCAF34 /* UIStoryboard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extensions.swift"; sourceTree = "<group>"; };
 		AC850AC22AA5901B00703D6A /* FairmaticLiteLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairmaticLiteLogger.swift; sourceTree = "<group>"; };
+		AC850AC62AA5BBB800703D6A /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		AC3CA46F2A9DCF3300135E48 /* FairmaticInsuranceSample */ = {
 			isa = PBXGroup;
 			children = (
+				AC850AC52AA5BBA900703D6A /* Utils */,
 				AC850AC12AA5900A00703D6A /* Logger */,
 				AC769FAB2AA20FE900BCAF34 /* Managers */,
 				AC769FA62AA1FB6300BCAF34 /* Extensions */,
@@ -140,6 +143,14 @@
 				AC850AC22AA5901B00703D6A /* FairmaticLiteLogger.swift */,
 			);
 			path = Logger;
+			sourceTree = "<group>";
+		};
+		AC850AC52AA5BBA900703D6A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AC850AC62AA5BBB800703D6A /* Helpers.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		D789BE092FF95383E818F74C /* Frameworks */ = {
@@ -275,6 +286,7 @@
 				AC769F9C2AA0C2A800BCAF34 /* FairmaticManager.swift in Sources */,
 				AC769F982AA0BD4A00BCAF34 /* OnDutyViewController.swift in Sources */,
 				AC769F942AA0BB2800BCAF34 /* FairmaticInsuranceUserDefaults.swift in Sources */,
+				AC850AC72AA5BBB800703D6A /* Helpers.swift in Sources */,
 				AC769FA82AA1FB7B00BCAF34 /* UIStoryboard+Extensions.swift in Sources */,
 				AC3CA4712A9DCF3300135E48 /* AppDelegate.swift in Sources */,
 			);

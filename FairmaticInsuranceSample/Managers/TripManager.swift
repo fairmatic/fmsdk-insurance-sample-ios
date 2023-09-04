@@ -19,7 +19,7 @@ final class State {
     
     /// The tracking ID of the trip
     var trackingId: String?
-    
+
     init(isDriverOnDuty: Bool,
          passenegerWaitingForPickup: Bool,
          passengerInCar: Bool,
@@ -28,6 +28,13 @@ final class State {
         self.passenegerWaitingForPickup = passenegerWaitingForPickup
         self.passengerInCar = passengerInCar
         self.trackingId = trackingId
+    }
+
+    init(state: State) {
+        self.isDriverOnDuty = state.isDriverOnDuty
+        self.passenegerWaitingForPickup = state.passenegerWaitingForPickup
+        self.passengerInCar = state.passengerInCar
+        self.trackingId = state.trackingId
     }
 }
 
@@ -41,63 +48,82 @@ final class TripManager {
     
     static let shared = TripManager()
     
-    private init() {}
+    private init() {
+        self.state = State(isDriverOnDuty: fairmaticUserDefaults.isDriverOnDuty,
+                      passenegerWaitingForPickup: fairmaticUserDefaults.isPassengerWaitingForPickup,
+                      passengerInCar: fairmaticUserDefaults.isPassengerInCar,
+                      trackingId: fairmaticUserDefaults.trackingId)
+    }
     
     /// The state of the trip manager
-    var state: State {
-        get {
-            State(isDriverOnDuty: fairmaticUserDefaults.isDriverOnDuty,
-                  passenegerWaitingForPickup: fairmaticUserDefaults.isPassengerWaitingForPickup,
-                  passengerInCar: fairmaticUserDefaults.isPassengerInCar,
-                  trackingId: fairmaticUserDefaults.trackingId)
-        }
-    }
+    private var state: State
     
     // MARK: Functions
     
     func goOnDuty(completion: @escaping FairmaticCompletionHandler) {
         log.debug("Going on duty")
-        state.isDriverOnDuty = true
-        fairmaticUserDefaults.isDriverOnDuty = true
-        setupOrTeardownPermissionManager()
-        fairmaticManager.updateInsurancePeriodsBasedOnApplicationState(completion: completion)
+        
+       synchronized(self) {
+            state.isDriverOnDuty = true
+            fairmaticUserDefaults.isDriverOnDuty = true
+            setupOrTeardownPermissionManager()
+            fairmaticManager.updateInsurancePeriodsBasedOnApplicationState(completion: completion)
+        }
     }
     
     func goOffDuty(completion: @escaping FairmaticCompletionHandler) {
         log.debug("Going off duty")
-        state.isDriverOnDuty = false
-        fairmaticUserDefaults.isDriverOnDuty = false
-        setupOrTeardownPermissionManager()
-        fairmaticManager.updateInsurancePeriodsBasedOnApplicationState(completion: completion)
+        synchronized(self) {
+            state.isDriverOnDuty = false
+            fairmaticUserDefaults.isDriverOnDuty = false
+            setupOrTeardownPermissionManager()
+            fairmaticManager.updateInsurancePeriodsBasedOnApplicationState(completion: completion)
+        }
     }
     
     func acceptNewPassengerRequest(completion: @escaping FairmaticCompletionHandler) {
         log.debug("Accepting new passenger request")
-        state.passenegerWaitingForPickup = true
-        fairmaticUserDefaults.isPassengerWaitingForPickup = true
-        fairmaticManager.updateInsurancePeriodsBasedOnApplicationState(completion: completion)
+        synchronized(self) {
+            state.passenegerWaitingForPickup = true
+            fairmaticUserDefaults.isPassengerWaitingForPickup = true
+            fairmaticManager.updateInsurancePeriodsBasedOnApplicationState(completion: completion)
+        }
     }
     
     func pickupPassenger(completion: @escaping FairmaticCompletionHandler) {
         log.debug("Picking up passenger")
-        state.passengerInCar = true
-        fairmaticUserDefaults.isPassengerInCar = true
-        fairmaticManager.updateInsurancePeriodsBasedOnApplicationState(completion: completion)
-    
+        synchronized(self) {
+            state.passengerInCar = true
+            fairmaticUserDefaults.isPassengerInCar = true
+            fairmaticManager.updateInsurancePeriodsBasedOnApplicationState(completion: completion)
+        }
     }
     
     func cancelRequest(completion: @escaping FairmaticCompletionHandler) {
         log.debug("Cancelling request")
-        state.passenegerWaitingForPickup = false
-        fairmaticUserDefaults.isPassengerWaitingForPickup = false
-        fairmaticManager.updateInsurancePeriodsBasedOnApplicationState(completion: completion)
+        synchronized(self) {
+            state.passenegerWaitingForPickup = false
+            fairmaticUserDefaults.isPassengerWaitingForPickup = false
+            fairmaticManager.updateInsurancePeriodsBasedOnApplicationState(completion: completion)
+        }
     }
     
     func dropPassenger(completion: @escaping FairmaticCompletionHandler) {
         log.debug("Dropping passenger")
-        state.passengerInCar = false
-        fairmaticUserDefaults.isPassengerInCar = false
-        fairmaticManager.updateInsurancePeriodsBasedOnApplicationState(completion: completion)
+        synchronized(self) {
+            state.passengerInCar = false
+            fairmaticUserDefaults.isPassengerInCar = false
+            fairmaticManager.updateInsurancePeriodsBasedOnApplicationState(completion: completion)
+        }
+    }
+    
+    func getState() -> State {
+        var state: State? = nil
+        synchronized(self) {
+            state = State(state: self.state)
+        }
+        
+        return state!
     }
 }
 

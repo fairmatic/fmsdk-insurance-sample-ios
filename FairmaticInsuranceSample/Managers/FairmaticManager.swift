@@ -126,7 +126,7 @@ private extension FairmaticManager {
     }
     
     private var currentlyActiveInsurancePeriod: InsuranceInfo? {
-        let state = TripManager.shared.state
+        let state = TripManager.shared.getState()
         if !state.isDriverOnDuty {
             return nil
         } else if state.passengerInCar {

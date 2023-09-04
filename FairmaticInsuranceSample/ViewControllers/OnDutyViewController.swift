@@ -100,7 +100,7 @@ final class OnDutyViewController: UIViewController {
 private extension OnDutyViewController {
     private func currentInsurancePeriod() -> Int {
         var insurancePeriod = 1
-        let state: State = TripManager.shared.state
+        let state: State = TripManager.shared.getState()
         if (state.passengerInCar) {
             insurancePeriod = 3
         } else if (state.passenegerWaitingForPickup) {
@@ -114,7 +114,7 @@ private extension OnDutyViewController {
         log.debug("Refreshing UI")
         
         let insurancePeriod = currentInsurancePeriod()
-        let state: State = TripManager.shared.state
+        let state: State = TripManager.shared.getState()
 
         // Update text
         self.insurancePeriodLabel.text = "Insurance Period: \(insurancePeriod)"
