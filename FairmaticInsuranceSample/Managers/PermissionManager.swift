@@ -45,7 +45,6 @@ class PermissionManager: NSObject, CLLocationManagerDelegate {
             displayLocationPermissionErrorViewNotVisible()
         // Follow through to ask for permission
         case CLAuthorizationStatus.notDetermined:
-            // Request for location, specifically for iOS8
             if (_locationManager != nil &&
                 _locationManager!.responds(
                     to: #selector(CLLocationManager.requestAlwaysAuthorization))) {
@@ -75,6 +74,8 @@ class PermissionManager: NSObject, CLLocationManagerDelegate {
                                                           style: .default,
                                                           handler: { [weak self] _ in
             // Show application settings
+            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!,
+                                      options: [:], completionHandler: nil)
             
             if (self != nil && self?._locationPermissionAlert != nil) {
                 self?.showAlert(alert: (self?._locationPermissionAlert)!)
