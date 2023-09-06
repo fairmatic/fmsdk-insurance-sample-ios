@@ -19,7 +19,6 @@ final class FairmaticInsuranceUserDefaults {
         static let isDriverOnDuty = "isDriverOnDuty"
         static let passengerInCar = "passengerInCar"
         static let passengerWaitingForPickup = "passengerWaitingForPickup"
-        static let trackingId = "trackingId"
         
         private init() {}
     }
@@ -58,15 +57,6 @@ final class FairmaticInsuranceUserDefaults {
         }
         set {
             userDefaults.set(newValue, forKey: UserDefaultsKeys.passengerWaitingForPickup)
-        }
-    }
-    
-    var trackingId: String? {
-        get {
-            userDefaults.string(forKey: UserDefaultsKeys.trackingId)
-        }
-        set {
-            userDefaults.set(newValue, forKey: UserDefaultsKeys.trackingId)
         }
     }
 }

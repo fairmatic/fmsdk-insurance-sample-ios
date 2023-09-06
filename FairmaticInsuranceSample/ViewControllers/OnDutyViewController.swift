@@ -42,7 +42,7 @@ final class OnDutyViewController: UIViewController {
         [acceptNewRideRequestButton, pickupPassengerButton, cancelRequestButton, dropPassengerButton, goOffDutyButton].forEach {
             $0?.startAnimatingPressActions()
             $0?.layer.cornerRadius = 8
-            
+            $0?.setTitleColor(.white, for: .disabled)
         }
         
         refreshUI()
@@ -146,6 +146,8 @@ private extension OnDutyViewController {
         default:
             break
         }
+
+        updateButtonStatesAccordingToEnabled()
     }
     
     private func refreshUIForPeriod1() {
@@ -194,5 +196,16 @@ private extension OnDutyViewController {
         self.pickupPassengerButton.isEnabled = false
         self.cancelRequestButton.isEnabled = false
         self.goOffDutyButton.isEnabled = false
+    }
+    
+    private func updateButtonStatesAccordingToEnabled() {
+        [acceptNewRideRequestButton,
+         pickupPassengerButton,
+         cancelRequestButton,
+         dropPassengerButton,
+         goOffDutyButton
+        ].forEach {
+            $0.alpha = $0.isEnabled ? 1.0 : 0.5
+        }
     }
 }

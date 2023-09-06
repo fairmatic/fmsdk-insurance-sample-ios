@@ -36,49 +36,30 @@ final class FairmaticManager: NSObject {
     }
     
     func startPeriod1(completion: @escaping FairmaticCompletionHandler) {
+        log.debug("Starting period 1")
         Fairmatic.startDriveWithPeriod1(completion)
     }
     
     func startPeriod2(completion: @escaping FairmaticCompletionHandler) {
-        let trackingId = "\(Date.currentMillis())"
+        let trackingId = "P2-\(Date.currentMillis())"
+        log.debug("Starting period 2")
         Fairmatic.startDriveWithPeriod2(trackingId, completionHandler: completion)
     }
     
     func startPeriod3(completion: @escaping FairmaticCompletionHandler) {
-        let trackingId = "\(Date.currentMillis())"
+        log.debug("Starting period 3")
+        let trackingId = "P3-\(Date.currentMillis())"
         Fairmatic.startDriveWithPeriod3(trackingId, completionHandler: completion)
     }
     
     func stopPeriod(completion: @escaping FairmaticCompletionHandler) {
+        log.debug("Stopping period")
         Fairmatic.stopPeriod(completion)
     }
-    
-    func updateInsurancePeriodsBasedOnApplicationState(completion: @escaping FairmaticCompletionHandler) {
-        guard let currentlyActiveInsurancePeriod = self.currentlyActiveInsurancePeriod else {
-            Fairmatic.stopPeriod(completion)
-            return
-        }
-        
-        switch currentlyActiveInsurancePeriod {
-        case 1:
-            Fairmatic.startDriveWithPeriod1(completion)
-        case 2:
-            Fairmatic.startDriveWithPeriod2(
-                "P2-\(Date.currentMillis())",
-                completionHandler: completion)
-        case 3:
-            Fairmatic.startDriveWithPeriod3(
-                "P3-\(Date.currentMillis())",
-                completionHandler: completion)
-        default:
-            Fairmatic.stopPeriod(completion)
-        }
-    }
-    
 }
 
 private extension FairmaticManager {
-    private func initializeSDKForDriverId(driverId: String,
+    func initializeSDKForDriverId(driverId: String,
                                           successHandler: (() -> Void)?,
                                           failureHandler: ((NSError?) -> Void)?,
                                           trialNumber: Int,
@@ -88,13 +69,11 @@ private extension FairmaticManager {
         let configuration = Configuration(sdkKey: sdkKey,
                                           driverId: driverId,
                                           driverAttributes: driverAttributes)
-        
-        configuration.driveDetectionMode = .insurance
-
         Fairmatic.setupWith(configuration: configuration,
                             delegate: self) { (success, error) in
             let error: NSError? = error as NSError?
             if var error { // SDK initialization failed
+                log.error("SDK initialization failed due to error: \(error.localizedDescription) at attempt \(trialNumber)/\(totalRetryCount)")
                 if (trialNumber < totalRetryCount) {
                     self.initializeSDKForDriverId(driverId: driverId,
                                                   successHandler: successHandler,
@@ -109,13 +88,14 @@ private extension FairmaticManager {
                 return
             }
             
-            self.updateInsurancePeriodsBasedOnApplicationState { success, error in
+            log.debug("Fairmatic SDK initialization successful!")
+            self.startAppropriateInsurancePeriodAtSDKInit { success, error in
                 successHandler?()
             }
         }
     }
     
-    private var currentlyActiveInsurancePeriod: Int? {
+    var currentlyActiveInsurancePeriod: Int? {
         if !fairmaticUserDefaults.isDriverOnDuty {
             return nil
         } else if fairmaticUserDefaults.isPassengerInCar {
@@ -142,6 +122,28 @@ private extension FairmaticManager {
                        userInfo: [NSLocalizedFailureReasonErrorKey: message])
     }
 
+    func startAppropriateInsurancePeriodAtSDKInit(completion: @escaping FairmaticCompletionHandler) {
+        log.debug("Attempting to select proper insurance period at SDK init")
+        
+        guard let currentlyActiveInsurancePeriod = self.currentlyActiveInsurancePeriod else {
+            log.debug("Insurance period could not be determined at SDK init, stopping periods")
+            stopPeriod(completion: completion)
+            return
+        }
+        
+        log.debug("Insurance period \(currentlyActiveInsurancePeriod) determined at SDK init")
+        
+        switch currentlyActiveInsurancePeriod {
+        case 1:
+            startPeriod1(completion: completion)
+        case 2:
+            startPeriod2(completion: completion)
+        case 3:
+            startPeriod3(completion: completion)
+        default:
+            stopPeriod(completion: completion)
+        }
+    }
 }
 
 // MARK: Fairmatic Delegate
