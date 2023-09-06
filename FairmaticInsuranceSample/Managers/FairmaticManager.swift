@@ -12,16 +12,6 @@ typealias FairmaticCompletionHandler = (Bool, Error?) -> Void
 
 final class FairmaticManager: NSObject {
     
-    private class InsuranceInfo {
-        let insurancePeriod: Int
-        let trackingId: String?
-        
-        init(insurancePeriod: Int, trackingId: String? = nil) {
-            self.insurancePeriod = insurancePeriod
-            self.trackingId = trackingId
-        }
-    }
-    
     static let shared = FairmaticManager()
     
     #warning("Add your SDK key in the below line and remove this warning")
@@ -30,6 +20,8 @@ final class FairmaticManager: NSObject {
     private let driverAttributes = DriverAttributes(name: "John Doe",
                                                     email: "johndoe@company.com",
                                                     phoneNumber: "+11234567890")
+    
+    private let fairmaticUserDefaults = FairmaticInsuranceUserDefaults.shared
     
     private override init() {}
     
@@ -57,22 +49,26 @@ final class FairmaticManager: NSObject {
         Fairmatic.startDriveWithPeriod3(trackingId, completionHandler: completion)
     }
     
+    func stopPeriod(completion: @escaping FairmaticCompletionHandler) {
+        Fairmatic.stopPeriod(completion)
+    }
+    
     func updateInsurancePeriodsBasedOnApplicationState(completion: @escaping FairmaticCompletionHandler) {
         guard let currentlyActiveInsurancePeriod = self.currentlyActiveInsurancePeriod else {
             Fairmatic.stopPeriod(completion)
             return
         }
         
-        switch currentlyActiveInsurancePeriod.insurancePeriod {
+        switch currentlyActiveInsurancePeriod {
         case 1:
             Fairmatic.startDriveWithPeriod1(completion)
         case 2:
             Fairmatic.startDriveWithPeriod2(
-                currentlyActiveInsurancePeriod.trackingId ?? "P2-\(Date.currentMillis())",
+                "P2-\(Date.currentMillis())",
                 completionHandler: completion)
         case 3:
             Fairmatic.startDriveWithPeriod3(
-                currentlyActiveInsurancePeriod.trackingId ?? "P3-\(Date.currentMillis())",
+                "P3-\(Date.currentMillis())",
                 completionHandler: completion)
         default:
             Fairmatic.stopPeriod(completion)
@@ -113,27 +109,21 @@ private extension FairmaticManager {
                 return
             }
             
-            // SDK initialized successfully
-            if (currentlyActiveInsurancePeriod != nil) {
-                Fairmatic.setDriveDetectionMode(DriveDetectionMode.autoON)
-            }
-            
             self.updateInsurancePeriodsBasedOnApplicationState { success, error in
                 successHandler?()
             }
         }
     }
     
-    private var currentlyActiveInsurancePeriod: InsuranceInfo? {
-        let state = TripManager.shared.getState()
-        if !state.isDriverOnDuty {
+    private var currentlyActiveInsurancePeriod: Int? {
+        if !fairmaticUserDefaults.isDriverOnDuty {
             return nil
-        } else if state.passengerInCar {
-            return InsuranceInfo(insurancePeriod: 3, trackingId: state.trackingId)
-        } else if state.passenegerWaitingForPickup {
-            return InsuranceInfo(insurancePeriod: 2, trackingId: state.trackingId)
+        } else if fairmaticUserDefaults.isPassengerInCar {
+            return 3
+        } else if fairmaticUserDefaults.isPassengerWaitingForPickup {
+            return 2
         } else {
-            return InsuranceInfo(insurancePeriod: 1, trackingId: state.trackingId)
+            return 1
         }
     }
     
@@ -143,6 +133,8 @@ private extension FairmaticManager {
         "application. Please contact Fairmatic support if the issue persists"
         if (error.code == Int(FairmaticError.networkUnreachable.rawValue)) {
             message = "Internet not available to set up for insurance, please enable mobile data or connect to WiFi and restart the application";
+        } else if error.code == Int(FairmaticError.invalidSDKKeyString.rawValue) {
+            message = "Invalid SDK key, please contact Fairmatic support"
         }
         
         return NSError(domain: "FairmaticManager",
@@ -151,6 +143,8 @@ private extension FairmaticManager {
     }
 
 }
+
+// MARK: Fairmatic Delegate
 
 extension FairmaticManager: FairmaticDelegate {
     func processStart(ofDrive startInfo: DriveStartInfo) {

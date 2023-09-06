@@ -16,6 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     /// The root navigation controller that contains view controllers
     var rootNavigationController: UINavigationController?
+    
+    
+    private let fairmaticManager = FairmaticManager.shared
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -31,7 +34,7 @@ private extension AppDelegate {
         log.debug("Reloading application")
         guard let driverId = FairmaticInsuranceUserDefaults.shared.driverId else {
             log.debug("Driver id not found, loading signup view controller")
-            TripManager.shared.goOffDuty { _, _ in }
+            fairmaticManager.stopPeriod { _, _ in }
             loadSignupViewController()
             return
         }

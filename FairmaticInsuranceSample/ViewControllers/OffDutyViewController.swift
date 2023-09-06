@@ -23,6 +23,8 @@ final class OffDutyViewController: UIViewController {
     
     weak var delegate: OffDutyViewControllerDelegate?
     
+    private let fairmaticUserDefaults = FairmaticInsuranceUserDefaults.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Off Duty"
@@ -31,12 +33,19 @@ final class OffDutyViewController: UIViewController {
     }
     
     @IBAction func goOnDutyButtonTapped(_ sender: Any) {
-        TripManager.shared.goOnDuty { success, error in
+        log.debug("Going on duty")
+        
+        // Set the driver onduty user default to true
+        fairmaticUserDefaults.isDriverOnDuty = true
+        
+        FairmaticManager.shared.startPeriod1 { success, error in
             if success {
-                self.delegate?.driverDidRequestToGoOnDuty()
+                log.debug("Started driver with period 1")
             } else {
-                log.error("Error in going on duty: \(String(describing: error))")
+                log.error("Error in going on duty: \(error!.localizedDescription)")
             }
         }
+        
+        self.delegate?.driverDidRequestToGoOnDuty()
     }
 }
