@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import FairmaticSDK
 
 protocol SignUpViewControllerDelegate: AnyObject {
     func signupCompleted()
@@ -46,7 +46,7 @@ final class SignUpViewController: UIViewController {
         emailTextField.resignFirstResponder()
         let driverId = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        guard let driverId = driverId, !driverId.isEmpty else {
+        guard let driverId = driverId, !driverId.isEmpty, Fairmatic.isValidInputParameter(driverId) else {
             showInvalidDriverAlert()
             return
         }
