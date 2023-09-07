@@ -74,8 +74,10 @@ private extension AppDelegate {
     
     func loadViewControllerAccordingToDuty() {
         if FairmaticInsuranceUserDefaults.shared.isDriverOnDuty {
+            PermissionManager.setup()
             loadOnDutyViewController()
         } else {
+            PermissionManager.teardown()
             loadOffDutyViewController()
         }
     }
