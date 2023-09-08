@@ -41,8 +41,8 @@ final class FairmaticManager: NSObject {
     }
     
     func startPeriod2(completion: @escaping FairmaticCompletionHandler) {
-        let trackingId = "P2-\(Date.currentMillis())"
         log.debug("Starting period 2")
+        let trackingId = "P2-\(Date.currentMillis())"
         Fairmatic.startDriveWithPeriod2(trackingId, completionHandler: completion)
     }
     
