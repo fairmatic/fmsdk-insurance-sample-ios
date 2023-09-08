@@ -42,13 +42,13 @@ final class FairmaticManager: NSObject {
     
     func startPeriod2(completion: @escaping FairmaticCompletionHandler) {
         log.debug("Starting period 2")
-        let trackingId = "P2-\(Date.currentMillis())"
+        let trackingId = "P2-\(currentDateInMillis())"
         Fairmatic.startDriveWithPeriod2(trackingId, completionHandler: completion)
     }
     
     func startPeriod3(completion: @escaping FairmaticCompletionHandler) {
         log.debug("Starting period 3")
-        let trackingId = "P3-\(Date.currentMillis())"
+        let trackingId = "P3-\(currentDateInMillis())"
         Fairmatic.startDriveWithPeriod3(trackingId, completionHandler: completion)
     }
     
@@ -143,6 +143,10 @@ private extension FairmaticManager {
         default:
             stopPeriod(completion: completion)
         }
+    }
+    
+    func currentDateInMillis() -> Int64 {
+        Int64(Date().timeIntervalSince1970 * 1000)
     }
 }
 

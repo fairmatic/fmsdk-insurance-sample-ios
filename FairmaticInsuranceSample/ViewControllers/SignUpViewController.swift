@@ -31,7 +31,6 @@ final class SignUpViewController: UIViewController {
         super.viewDidLoad()
         title = "Login"
         
-        signupButton.startAnimatingPressActions()
         signupButton.layer.cornerRadius = 8.0
 
         emailTextField.keyboardType = .emailAddress

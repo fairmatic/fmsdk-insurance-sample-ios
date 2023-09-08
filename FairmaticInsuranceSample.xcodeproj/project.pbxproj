@@ -16,9 +16,7 @@
 		AC769F962AA0BC4400BCAF34 /* OffDutyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC769F952AA0BC4400BCAF34 /* OffDutyViewController.swift */; };
 		AC769F982AA0BD4A00BCAF34 /* OnDutyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC769F972AA0BD4A00BCAF34 /* OnDutyViewController.swift */; };
 		AC769F9C2AA0C2A800BCAF34 /* FairmaticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC769F9B2AA0C2A800BCAF34 /* FairmaticManager.swift */; };
-		AC769F9E2AA0C73B00BCAF34 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC769F9D2AA0C73B00BCAF34 /* Date+Extensions.swift */; };
 		AC769FA22AA1ECDC00BCAF34 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC769FA12AA1ECDC00BCAF34 /* PermissionManager.swift */; };
-		AC769FA42AA1F47B00BCAF34 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC769FA32AA1F47B00BCAF34 /* UIButton+Extensions.swift */; };
 		AC769FA82AA1FB7B00BCAF34 /* UIStoryboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC769FA72AA1FB7B00BCAF34 /* UIStoryboard+Extensions.swift */; };
 		AC850AC32AA5901B00703D6A /* FairmaticLiteLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC850AC22AA5901B00703D6A /* FairmaticLiteLogger.swift */; };
 		AC850AC72AA5BBB800703D6A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC850AC62AA5BBB800703D6A /* Helpers.swift */; };
@@ -40,9 +38,7 @@
 		AC769F952AA0BC4400BCAF34 /* OffDutyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffDutyViewController.swift; sourceTree = "<group>"; };
 		AC769F972AA0BD4A00BCAF34 /* OnDutyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnDutyViewController.swift; sourceTree = "<group>"; };
 		AC769F9B2AA0C2A800BCAF34 /* FairmaticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairmaticManager.swift; sourceTree = "<group>"; };
-		AC769F9D2AA0C73B00BCAF34 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		AC769FA12AA1ECDC00BCAF34 /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
-		AC769FA32AA1F47B00BCAF34 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		AC769FA72AA1FB7B00BCAF34 /* UIStoryboard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extensions.swift"; sourceTree = "<group>"; };
 		AC850AC22AA5901B00703D6A /* FairmaticLiteLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairmaticLiteLogger.swift; sourceTree = "<group>"; };
 		AC850AC62AA5BBB800703D6A /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
@@ -117,8 +113,6 @@
 		AC769FA62AA1FB6300BCAF34 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				AC769F9D2AA0C73B00BCAF34 /* Date+Extensions.swift */,
-				AC769FA32AA1F47B00BCAF34 /* UIButton+Extensions.swift */,
 				AC769FA72AA1FB7B00BCAF34 /* UIStoryboard+Extensions.swift */,
 			);
 			path = Extensions;
@@ -275,8 +269,6 @@
 			files = (
 				AC769F962AA0BC4400BCAF34 /* OffDutyViewController.swift in Sources */,
 				AC769FA22AA1ECDC00BCAF34 /* PermissionManager.swift in Sources */,
-				AC769FA42AA1F47B00BCAF34 /* UIButton+Extensions.swift in Sources */,
-				AC769F9E2AA0C73B00BCAF34 /* Date+Extensions.swift in Sources */,
 				AC850AC32AA5901B00703D6A /* FairmaticLiteLogger.swift in Sources */,
 				AC769F922AA0B8B400BCAF34 /* SignUpViewController.swift in Sources */,
 				AC769F9C2AA0C2A800BCAF34 /* FairmaticManager.swift in Sources */,

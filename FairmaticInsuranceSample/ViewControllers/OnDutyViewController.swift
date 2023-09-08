@@ -40,7 +40,6 @@ final class OnDutyViewController: UIViewController {
         super.viewDidLoad()
         title = "On Duty"
         [acceptNewRideRequestButton, pickupPassengerButton, cancelRequestButton, dropPassengerButton, goOffDutyButton].forEach {
-            $0?.startAnimatingPressActions()
             $0?.layer.cornerRadius = 8
             $0?.setTitleColor(.white, for: .disabled)
         }

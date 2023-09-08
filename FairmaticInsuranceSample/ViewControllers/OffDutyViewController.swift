@@ -28,7 +28,6 @@ final class OffDutyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Off Duty"
-        goOnDutyButton.startAnimatingPressActions()
         goOnDutyButton.layer.cornerRadius = 8.0
     }
     

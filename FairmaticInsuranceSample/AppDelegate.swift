@@ -34,7 +34,7 @@ private extension AppDelegate {
         log.debug("Reloading application")
         guard let driverId = FairmaticInsuranceUserDefaults.shared.driverId else {
             log.debug("Driver id not found, loading signup view controller")
-            fairmaticManager.stopPeriod { _, _ in }
+            PermissionManager.setup()
             loadSignupViewController()
             return
         }

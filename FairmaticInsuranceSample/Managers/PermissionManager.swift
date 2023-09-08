@@ -14,12 +14,14 @@ class PermissionManager: NSObject, CLLocationManagerDelegate {
     static var _sharedInstance: PermissionManager?
     
     public static func setup() {
+        log.debug("Setting up permission manager")
         synchronized(self) {
             self._sharedInstance = PermissionManager()
         }
     }
 
     public static func teardown() {
+        log.debug("Tearing down permission manager")
         synchronized(self) {
             self._sharedInstance = nil
         }
@@ -37,6 +39,8 @@ class PermissionManager: NSObject, CLLocationManagerDelegate {
 
     internal func locationManager(_ manager: CLLocationManager,
                                   didChangeAuthorization status: CLAuthorizationStatus) {
+        log.debug("Location authorization changed: \(status)")
+        
         switch (status) {
         case CLAuthorizationStatus.restricted: fallthrough
         case CLAuthorizationStatus.denied: fallthrough
@@ -52,8 +56,17 @@ class PermissionManager: NSObject, CLLocationManagerDelegate {
             }
             break
         case CLAuthorizationStatus.authorizedAlways:
-            // Remove location permission view controller
-            hideLocationPermissionErrorViewIfVisible()
+            // Remove location permission view controller if location is given with full accuracy
+            if #available(iOS 14.0, *) {
+                if manager.accuracyAuthorization == .fullAccuracy {
+                    hideLocationPermissionErrorViewIfVisible()
+                } else {
+                    // Show the error if the location given is not accurate
+                    displayLocationPermissionErrorViewNotVisible()
+                }
+            } else {
+                hideLocationPermissionErrorViewIfVisible()
+            }
             break
         @unknown default:
             fatalError("Unknown location permission state")
