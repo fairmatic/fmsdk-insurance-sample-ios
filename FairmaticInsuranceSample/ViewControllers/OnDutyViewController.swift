@@ -81,6 +81,7 @@ final class OnDutyViewController: UIViewController {
         log.debug("Cancelling request")
 
         fairmaticUserDefaults.isPassengerWaitingForPickup = false
+        fairmaticUserDefaults.isPassengerInCar = false
         
         fairmaticManager.startPeriod1 { [weak self] success, error in
             if success {
@@ -95,6 +96,7 @@ final class OnDutyViewController: UIViewController {
         log.debug("Dropping passenger")
         
         fairmaticUserDefaults.isPassengerInCar = false
+        fairmaticUserDefaults.isPassengerWaitingForPickup = false
         
         fairmaticManager.startPeriod1 { [weak self] success, error in
             if success {
