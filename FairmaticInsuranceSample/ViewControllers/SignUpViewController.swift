@@ -20,7 +20,7 @@ extension SignUpViewController {
 
 final class SignUpViewController: UIViewController {
 
-    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var driverIdTextField: UITextField!
     @IBOutlet private weak var signupButton: UIButton!
     
     weak var delegate: SignUpViewControllerDelegate?
@@ -33,8 +33,8 @@ final class SignUpViewController: UIViewController {
         
         signupButton.layer.cornerRadius = 8.0
 
-        emailTextField.keyboardType = .emailAddress
-        emailTextField.becomeFirstResponder()
+        driverIdTextField.keyboardType = .emailAddress
+        driverIdTextField.becomeFirstResponder()
         
         let tap = UITapGestureRecognizer(target: self,
                                          action: #selector(Self.dismissKeyboard))
@@ -42,8 +42,8 @@ final class SignUpViewController: UIViewController {
     }
     
     @IBAction func signupButtonTapped(_ sender: Any) {
-        emailTextField.resignFirstResponder()
-        let driverId = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        driverIdTextField.resignFirstResponder()
+        let driverId = driverIdTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         
         guard let driverId = driverId, !driverId.isEmpty, Fairmatic.isValidInputParameter(driverId) else {
             showInvalidDriverAlert()
@@ -61,7 +61,7 @@ final class SignUpViewController: UIViewController {
 
 private extension SignUpViewController {
     func showInvalidDriverAlert() {
-        let alertController = UIAlertController(title: "Invalid driver email", message: "Please enter a valid email id for the driver", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Invalid driver ID", message: "Please enter a valid driver ID.", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(action)
         present(alertController, animated: true)
