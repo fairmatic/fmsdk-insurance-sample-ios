@@ -47,12 +47,18 @@ class PermissionManager: NSObject, CLLocationManagerDelegate {
         case CLAuthorizationStatus.authorizedWhenInUse:
             // Display location permisison view controller
             displayLocationPermissionErrorViewNotVisible()
-        // Follow through to ask for permission
-        case CLAuthorizationStatus.notDetermined:
             if (_locationManager != nil &&
                 _locationManager!.responds(
                     to: #selector(CLLocationManager.requestAlwaysAuthorization))) {
                 _locationManager!.requestAlwaysAuthorization()
+            }
+            
+        // Follow through to ask for permission
+        case CLAuthorizationStatus.notDetermined:
+            if (_locationManager != nil &&
+                _locationManager!.responds(
+                    to: #selector(CLLocationManager.requestWhenInUseAuthorization))) {
+                _locationManager!.requestWhenInUseAuthorization()
             }
             break
         case CLAuthorizationStatus.authorizedAlways:
