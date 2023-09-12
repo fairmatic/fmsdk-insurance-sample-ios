@@ -74,7 +74,8 @@ private extension FairmaticManager {
             let error: NSError? = error as NSError?
             if var error { // SDK initialization failed
                 log.error("SDK initialization failed due to error: \(error.localizedDescription) at attempt \(trialNumber)/\(totalRetryCount)")
-                if (trialNumber < totalRetryCount) {
+                // If the error occured due to network being unreachable, we retry. Else, we show the error to the user
+                if (trialNumber < totalRetryCount), self.isErrorDueToNetworkUnreachable(error: error) {
                     self.initializeSDKForDriverId(driverId: driverId,
                                                   successHandler: successHandler,
                                                   failureHandler: failureHandler,
@@ -93,6 +94,10 @@ private extension FairmaticManager {
                 successHandler?()
             }
         }
+    }
+    
+    func isErrorDueToNetworkUnreachable(error: NSError) -> Bool {
+        return error.code == Int(FairmaticError.networkUnreachable.rawValue)
     }
     
     var currentlyActiveInsurancePeriod: Int? {
