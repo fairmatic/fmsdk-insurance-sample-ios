@@ -1,0 +1,519 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC3CA4712A9DCF3300135E48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3CA4702A9DCF3300135E48 /* AppDelegate.swift */; };
+		AC3CA4782A9DCF3300135E48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC3CA4762A9DCF3300135E48 /* Main.storyboard */; };
+		AC3CA47A2A9DCF3500135E48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC3CA4792A9DCF3500135E48 /* Assets.xcassets */; };
+		AC3CA47D2A9DCF3500135E48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC3CA47B2A9DCF3500135E48 /* LaunchScreen.storyboard */; };
+		AC769F922AA0B8B400BCAF34 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC769F912AA0B8B400BCAF34 /* SignUpViewController.swift */; };
+		AC769F942AA0BB2800BCAF34 /* FairmaticInsuranceUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC769F932AA0BB2800BCAF34 /* FairmaticInsuranceUserDefaults.swift */; };
+		AC769F962AA0BC4400BCAF34 /* OffDutyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC769F952AA0BC4400BCAF34 /* OffDutyViewController.swift */; };
+		AC769F982AA0BD4A00BCAF34 /* OnDutyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC769F972AA0BD4A00BCAF34 /* OnDutyViewController.swift */; };
+		AC769F9C2AA0C2A800BCAF34 /* FairmaticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC769F9B2AA0C2A800BCAF34 /* FairmaticManager.swift */; };
+		AC769FA22AA1ECDC00BCAF34 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC769FA12AA1ECDC00BCAF34 /* PermissionManager.swift */; };
+		AC769FA82AA1FB7B00BCAF34 /* UIStoryboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC769FA72AA1FB7B00BCAF34 /* UIStoryboard+Extensions.swift */; };
+		AC850AC32AA5901B00703D6A /* FairmaticLiteLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC850AC22AA5901B00703D6A /* FairmaticLiteLogger.swift */; };
+		AC850AC72AA5BBB800703D6A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC850AC62AA5BBB800703D6A /* Helpers.swift */; };
+		AEA756AD10A2A02F307A51D0 /* Pods_FairmaticInsuranceSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C924AC9D81285BEEC083B0C /* Pods_FairmaticInsuranceSample.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4C924AC9D81285BEEC083B0C /* Pods_FairmaticInsuranceSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FairmaticInsuranceSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B08F87CC248B7DCD6AA8F07 /* Pods-FairmaticInsuranceSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FairmaticInsuranceSample.release.xcconfig"; path = "Target Support Files/Pods-FairmaticInsuranceSample/Pods-FairmaticInsuranceSample.release.xcconfig"; sourceTree = "<group>"; };
+		A1007F0E86ED8A167A92F40A /* Pods-FairmaticInsuranceSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FairmaticInsuranceSample.debug.xcconfig"; path = "Target Support Files/Pods-FairmaticInsuranceSample/Pods-FairmaticInsuranceSample.debug.xcconfig"; sourceTree = "<group>"; };
+		AC3CA46D2A9DCF3300135E48 /* FairmaticInsuranceSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FairmaticInsuranceSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC3CA4702A9DCF3300135E48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AC3CA4772A9DCF3300135E48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AC3CA4792A9DCF3500135E48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AC3CA47C2A9DCF3500135E48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AC3CA47E2A9DCF3500135E48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC769F912AA0B8B400BCAF34 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		AC769F932AA0BB2800BCAF34 /* FairmaticInsuranceUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairmaticInsuranceUserDefaults.swift; sourceTree = "<group>"; };
+		AC769F952AA0BC4400BCAF34 /* OffDutyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffDutyViewController.swift; sourceTree = "<group>"; };
+		AC769F972AA0BD4A00BCAF34 /* OnDutyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnDutyViewController.swift; sourceTree = "<group>"; };
+		AC769F9B2AA0C2A800BCAF34 /* FairmaticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairmaticManager.swift; sourceTree = "<group>"; };
+		AC769FA12AA1ECDC00BCAF34 /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
+		AC769FA72AA1FB7B00BCAF34 /* UIStoryboard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extensions.swift"; sourceTree = "<group>"; };
+		AC850AC22AA5901B00703D6A /* FairmaticLiteLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairmaticLiteLogger.swift; sourceTree = "<group>"; };
+		AC850AC62AA5BBB800703D6A /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AC3CA46A2A9DCF3300135E48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEA756AD10A2A02F307A51D0 /* Pods_FairmaticInsuranceSample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		06A37C6C40ECC2E8ADADC828 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A1007F0E86ED8A167A92F40A /* Pods-FairmaticInsuranceSample.debug.xcconfig */,
+				5B08F87CC248B7DCD6AA8F07 /* Pods-FairmaticInsuranceSample.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AC3CA4642A9DCF3300135E48 = {
+			isa = PBXGroup;
+			children = (
+				AC3CA46F2A9DCF3300135E48 /* FairmaticInsuranceSample */,
+				AC3CA46E2A9DCF3300135E48 /* Products */,
+				06A37C6C40ECC2E8ADADC828 /* Pods */,
+				D789BE092FF95383E818F74C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AC3CA46E2A9DCF3300135E48 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC3CA46D2A9DCF3300135E48 /* FairmaticInsuranceSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC3CA46F2A9DCF3300135E48 /* FairmaticInsuranceSample */ = {
+			isa = PBXGroup;
+			children = (
+				AC850AC52AA5BBA900703D6A /* Utils */,
+				AC850AC12AA5900A00703D6A /* Logger */,
+				AC769FAB2AA20FE900BCAF34 /* Managers */,
+				AC769FA62AA1FB6300BCAF34 /* Extensions */,
+				AC769F9F2AA1E99F00BCAF34 /* ViewControllers */,
+				AC3CA4702A9DCF3300135E48 /* AppDelegate.swift */,
+				AC3CA4762A9DCF3300135E48 /* Main.storyboard */,
+				AC3CA4792A9DCF3500135E48 /* Assets.xcassets */,
+				AC3CA47B2A9DCF3500135E48 /* LaunchScreen.storyboard */,
+				AC3CA47E2A9DCF3500135E48 /* Info.plist */,
+			);
+			path = FairmaticInsuranceSample;
+			sourceTree = "<group>";
+		};
+		AC769F9F2AA1E99F00BCAF34 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AC769F912AA0B8B400BCAF34 /* SignUpViewController.swift */,
+				AC769F952AA0BC4400BCAF34 /* OffDutyViewController.swift */,
+				AC769F972AA0BD4A00BCAF34 /* OnDutyViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AC769FA62AA1FB6300BCAF34 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AC769FA72AA1FB7B00BCAF34 /* UIStoryboard+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AC769FAB2AA20FE900BCAF34 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				AC769F932AA0BB2800BCAF34 /* FairmaticInsuranceUserDefaults.swift */,
+				AC769F9B2AA0C2A800BCAF34 /* FairmaticManager.swift */,
+				AC769FA12AA1ECDC00BCAF34 /* PermissionManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		AC850AC12AA5900A00703D6A /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				AC850AC22AA5901B00703D6A /* FairmaticLiteLogger.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		AC850AC52AA5BBA900703D6A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AC850AC62AA5BBB800703D6A /* Helpers.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D789BE092FF95383E818F74C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C924AC9D81285BEEC083B0C /* Pods_FairmaticInsuranceSample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AC3CA46C2A9DCF3300135E48 /* FairmaticInsuranceSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC3CA4812A9DCF3500135E48 /* Build configuration list for PBXNativeTarget "FairmaticInsuranceSample" */;
+			buildPhases = (
+				35CC62AF8E4FAC1777C64576 /* [CP] Check Pods Manifest.lock */,
+				AC3CA4692A9DCF3300135E48 /* Sources */,
+				AC3CA46A2A9DCF3300135E48 /* Frameworks */,
+				AC3CA46B2A9DCF3300135E48 /* Resources */,
+				D892A36024C1A8DF4EF9DDB5 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FairmaticInsuranceSample;
+			productName = FairmaticInsuranceSample;
+			productReference = AC3CA46D2A9DCF3300135E48 /* FairmaticInsuranceSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AC3CA4652A9DCF3300135E48 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					AC3CA46C2A9DCF3300135E48 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+				};
+			};
+			buildConfigurationList = AC3CA4682A9DCF3300135E48 /* Build configuration list for PBXProject "FairmaticInsuranceSample" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AC3CA4642A9DCF3300135E48;
+			productRefGroup = AC3CA46E2A9DCF3300135E48 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC3CA46C2A9DCF3300135E48 /* FairmaticInsuranceSample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AC3CA46B2A9DCF3300135E48 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC3CA47D2A9DCF3500135E48 /* LaunchScreen.storyboard in Resources */,
+				AC3CA47A2A9DCF3500135E48 /* Assets.xcassets in Resources */,
+				AC3CA4782A9DCF3300135E48 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		35CC62AF8E4FAC1777C64576 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FairmaticInsuranceSample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D892A36024C1A8DF4EF9DDB5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FairmaticInsuranceSample/Pods-FairmaticInsuranceSample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FairmaticInsuranceSample/Pods-FairmaticInsuranceSample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FairmaticInsuranceSample/Pods-FairmaticInsuranceSample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AC3CA4692A9DCF3300135E48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC769F962AA0BC4400BCAF34 /* OffDutyViewController.swift in Sources */,
+				AC769FA22AA1ECDC00BCAF34 /* PermissionManager.swift in Sources */,
+				AC850AC32AA5901B00703D6A /* FairmaticLiteLogger.swift in Sources */,
+				AC769F922AA0B8B400BCAF34 /* SignUpViewController.swift in Sources */,
+				AC769F9C2AA0C2A800BCAF34 /* FairmaticManager.swift in Sources */,
+				AC769F982AA0BD4A00BCAF34 /* OnDutyViewController.swift in Sources */,
+				AC769F942AA0BB2800BCAF34 /* FairmaticInsuranceUserDefaults.swift in Sources */,
+				AC850AC72AA5BBB800703D6A /* Helpers.swift in Sources */,
+				AC769FA82AA1FB7B00BCAF34 /* UIStoryboard+Extensions.swift in Sources */,
+				AC3CA4712A9DCF3300135E48 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AC3CA4762A9DCF3300135E48 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC3CA4772A9DCF3300135E48 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AC3CA47B2A9DCF3500135E48 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC3CA47C2A9DCF3500135E48 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AC3CA47F2A9DCF3500135E48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AC3CA4802A9DCF3500135E48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AC3CA4822A9DCF3500135E48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1007F0E86ED8A167A92F40A /* Pods-FairmaticInsuranceSample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P3U63M452S;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FairmaticInsuranceSample/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Insurance Sample";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Fairmatic requires location permissions for trip recording to work properly.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Fairmatic requires location permissions for trip recording to work properly.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Fairmatic requires location permissions for trip recording to work properly.";
+				INFOPLIST_KEY_NSMotionUsageDescription = "Fairmatic requires motion and fitness permission for trip recording to work properly.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fairmatic.FairmaticInsuranceSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AC3CA4832A9DCF3500135E48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B08F87CC248B7DCD6AA8F07 /* Pods-FairmaticInsuranceSample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P3U63M452S;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FairmaticInsuranceSample/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Insurance Sample";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Fairmatic requires location permissions for trip recording to work properly.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Fairmatic requires location permissions for trip recording to work properly.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Fairmatic requires location permissions for trip recording to work properly.";
+				INFOPLIST_KEY_NSMotionUsageDescription = "Fairmatic requires motion and fitness permission for trip recording to work properly.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fairmatic.FairmaticInsuranceSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AC3CA4682A9DCF3300135E48 /* Build configuration list for PBXProject "FairmaticInsuranceSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC3CA47F2A9DCF3500135E48 /* Debug */,
+				AC3CA4802A9DCF3500135E48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC3CA4812A9DCF3500135E48 /* Build configuration list for PBXNativeTarget "FairmaticInsuranceSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC3CA4822A9DCF3500135E48 /* Debug */,
+				AC3CA4832A9DCF3500135E48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AC3CA4652A9DCF3300135E48 /* Project object */;
+}

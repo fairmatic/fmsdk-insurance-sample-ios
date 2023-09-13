@@ -1,0 +1,46 @@
+PODS:
+  - AWSCore (2.23.5)
+  - AWSSQS (2.23.5):
+    - AWSCore (= 2.23.5)
+  - FairmaticSDK (1.0.0):
+    - FairmaticSDK/Standard (= 1.0.0)
+  - FairmaticSDK/Standard (1.0.0):
+    - AWSCore (~> 2.23.2)
+    - AWSSQS (~> 2.23.2)
+    - SQLite.swift (~> 0.12.2)
+  - MBProgressHUD (1.2.0)
+  - SQLite.swift (0.12.2):
+    - SQLite.swift/standard (= 0.12.2)
+  - SQLite.swift/standard (0.12.2)
+
+DEPENDENCIES:
+  - FairmaticSDK (from `https://github.com/fairmatic/fairmatic-cocoapods`, tag `1.0.0`)
+  - MBProgressHUD (= 1.2.0)
+
+SPEC REPOS:
+  trunk:
+    - AWSCore
+    - AWSSQS
+    - MBProgressHUD
+    - SQLite.swift
+
+EXTERNAL SOURCES:
+  FairmaticSDK:
+    :git: https://github.com/fairmatic/fairmatic-cocoapods
+    :tag: 1.0.0
+
+CHECKOUT OPTIONS:
+  FairmaticSDK:
+    :git: https://github.com/fairmatic/fairmatic-cocoapods
+    :tag: 1.0.0
+
+SPEC CHECKSUMS:
+  AWSCore: 609b7fbd59837525c818f3e8e3d42d3b427cadf6
+  AWSSQS: e60b27935d55eec8e155bc7ec265ea40ea7d353e
+  FairmaticSDK: 4e37e6345e6c25e3f7ea9bfb23b3b91ec364ea87
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
+
+PODFILE CHECKSUM: 225fe993ef34afd97897487b5095f68a3cf4ff96
+
+COCOAPODS: 1.11.3
