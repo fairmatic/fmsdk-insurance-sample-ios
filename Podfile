@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
- platform :ios, '11.0'
+ platform :ios, '13.0'
 
 target 'FairmaticInsuranceSample' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -7,7 +7,7 @@ target 'FairmaticInsuranceSample' do
 
   # Pods for FairmaticInsuranceSample
   
-  pod 'FairmaticSDK', :git => 'https://github.com/fairmatic/fairmatic-cocoapods', :tag => '1.0.0'
+  pod 'FairmaticSDK', :git => 'https://github.com/fairmatic/fairmatic-cocoapods', :tag => '2.0.0'
   pod 'MBProgressHUD', '1.2.0'
 end
 
