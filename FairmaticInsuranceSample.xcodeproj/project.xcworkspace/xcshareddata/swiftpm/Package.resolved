@@ -1,0 +1,41 @@
+{
+  "pins" : [
+    {
+      "identity" : "aws-sdk-ios-spm",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/aws-amplify/aws-sdk-ios-spm.git",
+      "state" : {
+        "revision" : "8ff8bebfe24271f7b16c5abaeb78daf82bee3a80",
+        "version" : "2.34.2"
+      }
+    },
+    {
+      "identity" : "fairmatic-sdk-spm",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/fairmatic/fairmatic-sdk-spm.git",
+      "state" : {
+        "revision" : "47833613a5c60e5e5bc6df722b74b1af19e62bd5",
+        "version" : "2.0.1"
+      }
+    },
+    {
+      "identity" : "mbprogresshud",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jdg/MBProgressHUD",
+      "state" : {
+        "revision" : "bca42b801100b2b3a4eda0ba8dd33d858c780b0d",
+        "version" : "1.2.0"
+      }
+    },
+    {
+      "identity" : "sqlite.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/fairmatic/SQLite.swift.git",
+      "state" : {
+        "revision" : "4f998a077518b8514f7bfe91420384c120f05269",
+        "version" : "0.15.4"
+      }
+    }
+  ],
+  "version" : 2
+}
