@@ -4,14 +4,12 @@ Sample app for insurance implementation using the Fairmatic SDK (docs.fairmatic.
 
 ## Pre-requisites
 
-- Xcode 14.0 or later
-- Cocoapods
+- Xcode 15.0 or later
 
 ## Steps to run the app
 
 1. Clone the repository, navigate to the repository using your terminal.
-2. Run `pod install`. This will install the Fairmatic SDK along with the necessary dependencies.
-3. Open the `FairmaticInsuranceSample.xcworkspace` using Xcode.
+2. Open the `FairmaticInsuranceSample.xcodeproj` using Xcode, wait for the Swift packages to be synced.
 4. Open the `FairmaticManager.swift` and replace the `private let sdkKey = ""` with your SDK key.
 5. Run the application on your desired device.
 
