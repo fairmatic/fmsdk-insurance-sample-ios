@@ -16,11 +16,7 @@ final class FairmaticManager: NSObject {
     
     #warning("Add your SDK key in the below line and remove this warning")
     private let sdkKey = ""
-    
-    private let driverAttributes = DriverAttributes(name: "John Doe",
-                                                    email: "johndoe@company.com",
-                                                    phoneNumber: "+11234567890")
-    
+        
     private let fairmaticUserDefaults = FairmaticInsuranceUserDefaults.shared
     
     private override init() {}
@@ -66,6 +62,15 @@ private extension FairmaticManager {
                                           totalRetryCount: Int) {
         let currentlyActiveInsurancePeriod = self.currentlyActiveInsurancePeriod
         log.debug("Initializing SDK for driver \(driverId) with current insurance period \(String(describing: currentlyActiveInsurancePeriod))")
+        
+        #warning("Replace the below driver attributes with your own driver attributes")
+        let driverAttributes = DriverAttributes(
+            firstName: "John",
+            lastName: "Doe",
+            email: "johndoe@company.com",
+            phoneNumber: "+11234567890"
+        )
+
         let configuration = Configuration(sdkKey: sdkKey,
                                           driverId: driverId,
                                           driverAttributes: driverAttributes)
