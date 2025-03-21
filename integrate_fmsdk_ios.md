@@ -36,9 +36,9 @@ driving analytics</string>
 <string>We use activity to detect your trips faster and more accurately.
 This also reduces the amount of battery we use.</string>
 <key>NSBluetoothAlwaysUsageDescription</key>
-<string>The application needs to use bluetooth in order to track trips accurately</string>
+<string>Bluetooth</string>
 <key>NSBluetoothPeripheralUsageDescription</key>
-<string>The application needs to use bluetooth in order to track trips accurately</string>
+<string>Bluetooth</string>
 ```
 
 > [!NOTE] 
