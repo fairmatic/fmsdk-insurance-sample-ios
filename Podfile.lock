@@ -2,39 +2,67 @@ PODS:
   - AWSCore (2.34.2)
   - AWSSQS (2.34.2):
     - AWSCore (= 2.34.2)
-  - FairmaticSDK (2.0.3):
-    - FairmaticSDK/Standard (= 2.0.3)
-  - FairmaticSDK/Standard (2.0.3):
+  - DriveKitBeaconUtils (2.13.2):
+    - DriveKitCore (= 2.13.2)
+  - DriveKitCore (2.13.2):
+    - DriveKitNetworking (= 2.13.2)
+  - DriveKitDBTripAccess (2.13.2):
+    - DriveKitCore (= 2.13.2)
+  - DriveKitDBVehicleAccess (2.13.2):
+    - DriveKitBeaconUtils (= 2.13.2)
+    - DriveKitCore (= 2.13.2)
+  - DriveKitNetworking (2.13.2)
+  - DriveKitTripAnalysis (2.13.2):
+    - DriveKitBeaconUtils (= 2.13.2)
+    - DriveKitCore (= 2.13.2)
+    - DriveKitDBTripAccess (= 2.13.2)
+    - DriveKitDBVehicleAccess (= 2.13.2)
+  - FairmaticSDK (3.0.0):
+    - FairmaticSDK/Standard (= 3.0.0)
+  - FairmaticSDK/Standard (3.0.0):
     - AWSCore (~> 2.34.2)
     - AWSSQS (~> 2.34.2)
+    - DriveKitTripAnalysis (= 2.13.2)
   - MBProgressHUD (1.2.0)
 
 DEPENDENCIES:
-  - FairmaticSDK (from `https://github.com/fairmatic/fairmatic-cocoapods`, tag `2.0.3`)
+  - FairmaticSDK (from `https://github.com/fairmatic/fairmatic-cocoapods`, tag `3.0.0`)
   - MBProgressHUD (= 1.2.0)
 
 SPEC REPOS:
   trunk:
     - AWSCore
     - AWSSQS
+    - DriveKitBeaconUtils
+    - DriveKitCore
+    - DriveKitDBTripAccess
+    - DriveKitDBVehicleAccess
+    - DriveKitNetworking
+    - DriveKitTripAnalysis
     - MBProgressHUD
 
 EXTERNAL SOURCES:
   FairmaticSDK:
     :git: https://github.com/fairmatic/fairmatic-cocoapods
-    :tag: 2.0.3
+    :tag: 3.0.0
 
 CHECKOUT OPTIONS:
   FairmaticSDK:
     :git: https://github.com/fairmatic/fairmatic-cocoapods
-    :tag: 2.0.3
+    :tag: 3.0.0
 
 SPEC CHECKSUMS:
   AWSCore: 13649d9063a6807ec37bde35c8f2da329d63d4e2
   AWSSQS: 83192c91ef1dc8682cec17e83d6dcc7380715dd0
-  FairmaticSDK: 98035b77870b136a427ff68ec0bcd93c7d3615bf
+  DriveKitBeaconUtils: ecc496a0810f589c192183b94c6045a11c1eea65
+  DriveKitCore: 48cfb2bf73ed09acd73800ecb4f2c71ee1e162c3
+  DriveKitDBTripAccess: a2feb10283bf6e34607cfcf8f6aecf7adfbdd6b8
+  DriveKitDBVehicleAccess: 2660a0ea4f196adbb9db4481d2d55a7ee775f24d
+  DriveKitNetworking: d0999e1c783ad9b93d3bdd824c02fc309bcb041b
+  DriveKitTripAnalysis: ccfbf703e40f23d676c083fb6be85ce41bf14897
+  FairmaticSDK: dbe2553960e76328eae9b6db1cc06be24325f5a5
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
 
-PODFILE CHECKSUM: 4de2c611b3dde353fe407e23f293868f505a12e9
+PODFILE CHECKSUM: 919c82acb77dae890dff6b02a8c63717c266cd8c
 
 COCOAPODS: 1.15.2
