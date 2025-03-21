@@ -15,3 +15,13 @@ Sample app for insurance implementation using the Fairmatic SDK (docs.fairmatic.
 4. Open the `FairmaticManager.swift` and replace the `private let sdkKey = ""` with your SDK key.
 5. Run the application on your desired device.
 
+## Quick Start
+
+Follow [this]() document for a quick guide on integrating Fairmatic SDK in your app. 
+
+## Migrations
+
+### Follow [this](/migrate_from_older_versions.md) guide if you are migrating from Fairmatic SDK 1.x, 2.x.
+
+### Follow [this](/migrate_from_zendrive.md) guide if you are migrating from Zendrive SDK.
+

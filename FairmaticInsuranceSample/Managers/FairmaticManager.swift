@@ -16,11 +16,6 @@ final class FairmaticManager: NSObject {
     
     #warning("Add your SDK key in the below line and remove this warning")
     private let sdkKey = ""
-    
-    private let driverAttributes = DriverAttributes(name: "John Doe",
-                                                    email: "johndoe@company.com",
-                                                    phoneNumber: "+11234567890")
-    
     private let fairmaticUserDefaults = FairmaticInsuranceUserDefaults.shared
     
     private override init() {}
@@ -37,7 +32,8 @@ final class FairmaticManager: NSObject {
     
     func startPeriod1(completion: @escaping FairmaticCompletionHandler) {
         log.debug("Starting period 1")
-        Fairmatic.startDriveWithPeriod1(completion)
+        let trackingId = "P1-\(currentDateInMillis())"
+        Fairmatic.startDriveWithPeriod1(trackingId, completionHandler: completion)
     }
     
     func startPeriod2(completion: @escaping FairmaticCompletionHandler) {
@@ -66,11 +62,19 @@ private extension FairmaticManager {
                                           totalRetryCount: Int) {
         let currentlyActiveInsurancePeriod = self.currentlyActiveInsurancePeriod
         log.debug("Initializing SDK for driver \(driverId) with current insurance period \(String(describing: currentlyActiveInsurancePeriod))")
+        
+        #warning("Replace the below driver attributes with your own driver attributes")
+        let driverAttributes = DriverAttributes(
+            firstName: "John",
+            lastName: "Doe",
+            email: "johndoe@company.com",
+            phoneNumber: "+11234567890"
+        )
+
         let configuration = Configuration(sdkKey: sdkKey,
                                           driverId: driverId,
                                           driverAttributes: driverAttributes)
-        Fairmatic.setupWith(configuration: configuration,
-                            delegate: self) { (success, error) in
+        Fairmatic.setupWith(configuration: configuration) { (success, error) in
             let error: NSError? = error as NSError?
             if var error { // SDK initialization failed
                 log.error("SDK initialization failed due to error: \(error.localizedDescription) at attempt \(trialNumber)/\(totalRetryCount)")
@@ -152,41 +156,5 @@ private extension FairmaticManager {
     
     func currentDateInMillis() -> Int64 {
         Int64(Date().timeIntervalSince1970 * 1000)
-    }
-}
-
-// MARK: Fairmatic Delegate
-
-extension FairmaticManager: FairmaticDelegate {
-    func processStart(ofDrive startInfo: DriveStartInfo) {
-        log.debug("Fairmatic SDK started for drive with tracking id \(startInfo.trackingId ?? "nil")")
-    }
-    
-    func processResume(ofDrive resumeInfo: DriveResumeInfo) {
-        log.debug("Fairmatic SDK resumed for drive with tracking id \(resumeInfo.trackingId ?? "nil")")
-    }
-    
-    func processAnalysis(ofDrive analyzedDriveInfo: AnalyzedDriveInfo) {
-        log.debug("Fairmatic SDK analyzed drive with tracking id \(analyzedDriveInfo.trackingId ?? "nil")")
-    }
-    
-    func processPotentialAccidentDetected(_ accidentInfo: AccidentInfo) {
-        log.debug("Fairmatic SDK detected potential accident with tracking id \(accidentInfo.trackingId ?? "nil")")
-    }
-    
-    func processAccidentDetected(_ accidentInfo: AccidentInfo) {
-        log.debug("Fairmatic SDK detected accident with tracking id \(accidentInfo.trackingId ?? "nil")")
-    }
-    
-    func processEnd(ofDrive estimatedDriveInfo: EstimatedDriveInfo) {
-        log.debug("Fairmatic SDK ended drive with tracking id \(estimatedDriveInfo.trackingId ?? "nil")")
-    }
-    
-    func settingsChanged(_ settings: Settings) {
-        log.debug("Settings changed from FMSDK, and \(settings.errors.count) errors were found!")
-        
-        settings.errors.forEach {
-            print("Error from Fairmatic SDK: \($0.errorType)")
-        }
     }
 }

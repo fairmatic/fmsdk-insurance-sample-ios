@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		540F1F6564B3E3C5B097B4E0 /* Pods_FairmaticInsuranceSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D6D2C650566BF21A8AC41F /* Pods_FairmaticInsuranceSample.framework */; };
 		AC3CA4712A9DCF3300135E48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3CA4702A9DCF3300135E48 /* AppDelegate.swift */; };
 		AC3CA4782A9DCF3300135E48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC3CA4762A9DCF3300135E48 /* Main.storyboard */; };
 		AC3CA47A2A9DCF3500135E48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC3CA4792A9DCF3500135E48 /* Assets.xcassets */; };
@@ -20,12 +21,10 @@
 		AC769FA82AA1FB7B00BCAF34 /* UIStoryboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC769FA72AA1FB7B00BCAF34 /* UIStoryboard+Extensions.swift */; };
 		AC850AC32AA5901B00703D6A /* FairmaticLiteLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC850AC22AA5901B00703D6A /* FairmaticLiteLogger.swift */; };
 		AC850AC72AA5BBB800703D6A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC850AC62AA5BBB800703D6A /* Helpers.swift */; };
-		B3FCFA2CEBBBBD11C3A54279 /* Pods_FairmaticInsuranceSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EF10E7F0A78CC5BBE7E513 /* Pods_FairmaticInsuranceSample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		27EF10E7F0A78CC5BBE7E513 /* Pods_FairmaticInsuranceSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FairmaticInsuranceSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		94AF8CB59E43AC523F32714C /* Pods-FairmaticInsuranceSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FairmaticInsuranceSample.release.xcconfig"; path = "Target Support Files/Pods-FairmaticInsuranceSample/Pods-FairmaticInsuranceSample.release.xcconfig"; sourceTree = "<group>"; };
+		318182EC0A62F8501FEC3125 /* Pods-FairmaticInsuranceSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FairmaticInsuranceSample.debug.xcconfig"; path = "Target Support Files/Pods-FairmaticInsuranceSample/Pods-FairmaticInsuranceSample.debug.xcconfig"; sourceTree = "<group>"; };
 		AC3CA46D2A9DCF3300135E48 /* FairmaticInsuranceSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FairmaticInsuranceSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC3CA4702A9DCF3300135E48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC3CA4772A9DCF3300135E48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -41,7 +40,8 @@
 		AC769FA72AA1FB7B00BCAF34 /* UIStoryboard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extensions.swift"; sourceTree = "<group>"; };
 		AC850AC22AA5901B00703D6A /* FairmaticLiteLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairmaticLiteLogger.swift; sourceTree = "<group>"; };
 		AC850AC62AA5BBB800703D6A /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		D17AF360B95008336F3F96A1 /* Pods-FairmaticInsuranceSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FairmaticInsuranceSample.debug.xcconfig"; path = "Target Support Files/Pods-FairmaticInsuranceSample/Pods-FairmaticInsuranceSample.debug.xcconfig"; sourceTree = "<group>"; };
+		BBC51FEADE42A587F5847A8D /* Pods-FairmaticInsuranceSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FairmaticInsuranceSample.release.xcconfig"; path = "Target Support Files/Pods-FairmaticInsuranceSample/Pods-FairmaticInsuranceSample.release.xcconfig"; sourceTree = "<group>"; };
+		D4D6D2C650566BF21A8AC41F /* Pods_FairmaticInsuranceSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FairmaticInsuranceSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3FCFA2CEBBBBD11C3A54279 /* Pods_FairmaticInsuranceSample.framework in Frameworks */,
+				540F1F6564B3E3C5B097B4E0 /* Pods_FairmaticInsuranceSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,10 +59,18 @@
 		06A37C6C40ECC2E8ADADC828 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D17AF360B95008336F3F96A1 /* Pods-FairmaticInsuranceSample.debug.xcconfig */,
-				94AF8CB59E43AC523F32714C /* Pods-FairmaticInsuranceSample.release.xcconfig */,
+				318182EC0A62F8501FEC3125 /* Pods-FairmaticInsuranceSample.debug.xcconfig */,
+				BBC51FEADE42A587F5847A8D /* Pods-FairmaticInsuranceSample.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		9204FE6D1BA22805A7420814 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4D6D2C650566BF21A8AC41F /* Pods_FairmaticInsuranceSample.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		AC3CA4642A9DCF3300135E48 = {
@@ -71,7 +79,7 @@
 				AC3CA46F2A9DCF3300135E48 /* FairmaticInsuranceSample */,
 				AC3CA46E2A9DCF3300135E48 /* Products */,
 				06A37C6C40ECC2E8ADADC828 /* Pods */,
-				B3E04D6D01830F6AAD64FE0B /* Frameworks */,
+				9204FE6D1BA22805A7420814 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,14 +152,6 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		B3E04D6D01830F6AAD64FE0B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				27EF10E7F0A78CC5BBE7E513 /* Pods_FairmaticInsuranceSample.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -159,11 +159,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AC3CA4812A9DCF3500135E48 /* Build configuration list for PBXNativeTarget "FairmaticInsuranceSample" */;
 			buildPhases = (
-				0DDE85760009CD6226823A1C /* [CP] Check Pods Manifest.lock */,
+				223306B94E591D29E32C885A /* [CP] Check Pods Manifest.lock */,
 				AC3CA4692A9DCF3300135E48 /* Sources */,
 				AC3CA46A2A9DCF3300135E48 /* Frameworks */,
 				AC3CA46B2A9DCF3300135E48 /* Resources */,
-				1B13BD8ABBB59EDCF8C9ED45 /* [CP] Embed Pods Frameworks */,
+				55B46FAF6277939018535E5F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -221,7 +221,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0DDE85760009CD6226823A1C /* [CP] Check Pods Manifest.lock */ = {
+		223306B94E591D29E32C885A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -243,7 +243,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1B13BD8ABBB59EDCF8C9ED45 /* [CP] Embed Pods Frameworks */ = {
+		55B46FAF6277939018535E5F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -418,7 +418,7 @@
 		};
 		AC3CA4822A9DCF3500135E48 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D17AF360B95008336F3F96A1 /* Pods-FairmaticInsuranceSample.debug.xcconfig */;
+			baseConfigurationReference = 318182EC0A62F8501FEC3125 /* Pods-FairmaticInsuranceSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -456,7 +456,7 @@
 		};
 		AC3CA4832A9DCF3500135E48 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94AF8CB59E43AC523F32714C /* Pods-FairmaticInsuranceSample.release.xcconfig */;
+			baseConfigurationReference = BBC51FEADE42A587F5847A8D /* Pods-FairmaticInsuranceSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
