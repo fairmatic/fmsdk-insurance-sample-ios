@@ -46,7 +46,7 @@ For the Fairmatic SDK to be more accurate in uploading all trip data, it needs t
 </array>
 ```
 
-In the case you already have a background refresh task, as iOS allows only one scheduled background fetch task, you will need to reuse your existing BGAppRefreshTask to call the following function:
+In the case you already have a background refresh task, as iOS allows only one scheduled background fetch task, you will need to reuse your existing `BGAppRefreshTask` to call the following function:
 
 ```swift
 Fairmatic.logSDKHealth(.backgroundProcessing) { _ in
@@ -74,16 +74,16 @@ private let driverAttributes = DriverAttributes(
 ```
 and the initialize the configuration object:
 ```swift
-let configuration = Configuration(sdkKey: sdkKey,
+let configuration = Configuration(sdkKey: "fairmatic_sdk_key",
                                   driverId: driverId,
                                   driverAttributes: driverAttributes)
 ```
+> [!NOTE] 
 > Make sure you pass the Fairmatic SDK key when creating the `Configuration` object. If your backend systems provide the SDK keys, pass the correct SDK key to the application based on the application version. The Zendrive SDK key should be used to set up Zendrive SDK and the Fairmatic SDK key should be used to set up Fairmatic SDK.
 
 and then finally initialize the SDK
 ```swift
-Fairmatic.setupWith(configuration: configuration) { (success, error)
-in {
+Fairmatic.setupWith(configuration: configuration) { (success, error) in
     // Handle success or error here
 }
 ```

@@ -43,7 +43,7 @@ For the Fairmatic SDK to be more accurate in uploading all trip data, it needs t
 </array>
 ```
 
-In the case you already have a background refresh task, as iOS allows only one scheduled background fetch task, you will need to reuse your existing BGAppRefreshTask to call the following function:
+In the case you already have a background refresh task, as iOS allows only one scheduled background fetch task, you will need to reuse your existing `BGAppRefreshTask` to call the following function:
 
 ```swift
 Fairmatic.logSDKHealth(.backgroundProcessing) { _ in

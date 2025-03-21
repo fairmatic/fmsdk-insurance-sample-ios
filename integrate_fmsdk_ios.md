@@ -56,7 +56,7 @@ For the Fairmatic SDK to be more accurate in uploading all trip data, it needs t
 </array>
 ```
 
-In the case you already have a background refresh task, as iOS allows only one scheduled background fetch task, you will need to reuse your existing BGAppRefreshTask to call the following function:
+In the case you already have a background refresh task, as iOS allows only one scheduled background fetch task, you will need to reuse your existing `BGAppRefreshTask` to call the following function:
 
 ```swift
 Fairmatic.logSDKHealth(.backgroundProcessing) { _ in
@@ -64,20 +64,15 @@ Fairmatic.logSDKHealth(.backgroundProcessing) { _ in
 }
 ```
 
-In this case, don’t add the new *“Permitted background task scheduler identifier”* to your Info.plist.
+In this case, don’t add the new `BGTaskSchedulerPermittedIdentifiers` to your Info.plist.
 
 ## Setup the Fairmatic SDK in code
 
 The following code snippet shows how to initialize the SDK. You will need the SDK key and the driver details.
 
-> Please put this code in your `AppDelegate`’s `didFinishLaunchingWithOptions()` method. The SDK’s `Fairmatic.setup()` API should be called at every app launch with proper configuration. Failing to do so will result in errors in the trip APIs.
-
 ```swift
-// Import the Fairmatic SDK module
+// 1. Import the Fairmatic SDK module
 import FairmaticSDK
-
-// 1. Your SDK key
-let sdkKey = "your_sdk_key_here"
 
 // 2. Driver attributes creation
 let driverAttributes = DriverAttributes(firstName: "John",
@@ -85,8 +80,8 @@ let driverAttributes = DriverAttributes(firstName: "John",
                                         email: "john_doe@company.com",
                                         phoneNumber: "1234567890")
 
-// 3. Creation of the config object using the above objects.
-let config = Configuration(sdkKey: sdkKey,
+// 3. Creation of the config object using SDK key, driverId, and the above driver attributes.
+let config = Configuration(sdkKey: "your_sdk_key_here",
                            driverId: "alphanumeric_driver_id",
                            driverAttributes: driverAttributes)
 
@@ -102,15 +97,16 @@ Fairmatic.setupWith(
 }
 ```
 
+> [!IMPORTANT]
+> Please put this code in your `AppDelegate`’s `didFinishLaunchingWithOptions()` method if a driver is already available in your app. This code should also be present in the flow when your driver logs in successfully into the app. The SDK’s `Fairmatic.setup()` API should be called at every app launch with proper configuration. Failing to do so will result in errors in the trip APIs.
+
 ## Call the insurance APIs
 
 ### Insurance period 1
-Start insurance period 1 when the driver starts the day and is waiting for a request. The tracking ID is a key that is used to uniquely
+Start insurance period 1 when the driver starts the day and is waiting for a request. The tracking ID is a key that is used to uniquely identify the insurance trip.
 
 ```swift
-let trackingId = "some_unique_string_p1"
-
-Fairmatic.startDriveWithPeriod1(trackingId) { [weak self] success, error in
+Fairmatic.startDriveWithPeriod1("some_unique_string_p1") { [weak self] success, error in
     if success {
         print("Started trip \(trackingId) with period 1")        
     } else if let error {
@@ -123,9 +119,7 @@ Fairmatic.startDriveWithPeriod1(trackingId) { [weak self] success, error in
 Start insurance period 2 when the driver accepts the passenger's or the company's request.
 
 ```swift
-let trackingId = "some_unique_string_p2"
-
-Fairmatic.startDriveWithPeriod2(trackingId) { [weak self] success, error in
+Fairmatic.startDriveWithPeriod2("some_unique_string_p2") { [weak self] success, error in
     if success {
         print("Started trip \(trackingId) with period 2")        
     } else if let error {
@@ -138,9 +132,7 @@ Fairmatic.startDriveWithPeriod2(trackingId) { [weak self] success, error in
 Start insurance period 3 when the passenger/goods board the vehicle. In case of multiple passengers, the SDK needs to stay in insurance period 3.
 
 ```swift
-let trackingId = "some_unique_string_p3"
-
-Fairmatic.startDriveWithPeriod3(trackingId) { [weak self] success, error in
+Fairmatic.startDriveWithPeriod3("some_unique_string_p3") { [weak self] success, error in
     if success {
         print("Started trip \(trackingId) with period 3")        
     } else if let error {
