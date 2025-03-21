@@ -92,3 +92,6 @@ in {
 
 Replace all the `Zendrive.startPeriodX()` API calls with `Fairmatic.startPeriodX()`. Also, the `startPeriod1()` API accepts a `trackingId` string on the Fairmatic SDK to stay consistent with the other insurance period APIs.
 
+### Removal of the `Zendrive.isValidInputParameter()` method.
+
+You no longer need to check your input strings using this method, as all the individual APIs of the SDK validate the strings and return appropriate errors if the strings are invalid.
