@@ -15,21 +15,22 @@ and run the pod install command
 ### Changes to Background Modes
 
 The `3.0.0` uses background fetch in addition to background location to ensure the smooth and timely uploads of trips.
-Allow background background fetch for your app:
+Allow background fetch for your app:
 On the project screen, click Capabilities → Turn Background Modes on → Select Background Fetch
 
 ## Changes to Permission-related keys in `Info.plist`
 
-In addition to location and motion related keys which were needed in the previous versions of the SDK, this version also needs bluetooth usage related keys.
+In addition to location and motion related keys which were needed in the previous versions of the SDK, this version also needs bluetooth usage related keys. If you already have these keys present in your `Info.plist`, you don't me
 
 ```xml
 <key>NSBluetoothAlwaysUsageDescription</key>
-<string>The application needs to use bluetooth in order to track trips accurately</string>
+<string>Bluetooth</string>
 <key>NSBluetoothPeripheralUsageDescription</key>
-<string>The application needs to use bluetooth in order to track trips accurately</string>
+<string>Bluetooth</string>
 ```
 
-> Since Fairmatic imports the CoreBluetooth framework, we strongly recommend you also include a Bluetooth usage description message as shown below. Even though the SDK won't use Bluetooth, this import mandates to put this permission-related string.
+> [!NOTE] 
+> Even though we won't actually use Bluetooth features, Apple requires this message whenever Bluetooth code is present in an app. This is just a technical requirement.
 
 ### Background task ID configuration
 
@@ -70,7 +71,7 @@ The `DriverAttributes` now accepts the `firstName` and `lastName` of the driver 
 
 ### Removal of `FairmaticDelegate`
 
-The `FairmaticDelegate` protocol is no longer available, and you can remove all the occurences of it in your code. Hence, the signature of the `Fairmatic.setup()` function has also changed to not accept the delegate parameter. This simplifies your app code.
+The `FairmaticDelegate` protocol is no longer needed, and you can remove all the occurences of it in your code. Hence, the signature of the `Fairmatic.setup()` function has also changed to not accept the delegate parameter. This simplifies your app code.
 
 ```diff
 -        Fairmatic.setupWith(configuration: configuration,

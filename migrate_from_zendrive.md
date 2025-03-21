@@ -27,12 +27,13 @@ In addition to location and motion related keys which were needed in the previou
 
 ```xml
 <key>NSBluetoothAlwaysUsageDescription</key>
-<string>The application needs to use bluetooth in order to track trips accurately</string>
+<string>Bluetooth</string>
 <key>NSBluetoothPeripheralUsageDescription</key>
-<string>The application needs to use bluetooth in order to track trips accurately</string>
+<string>Bluetooth</string>
 ```
 
-> Since Fairmatic imports the CoreBluetooth framework, we strongly recommend you also include a Bluetooth usage description message as shown below. Even though the SDK won't use Bluetooth, this import mandates to put this permission-related string.
+> [!NOTE] 
+> Even though we won't actually use Bluetooth features, Apple requires this message whenever Bluetooth code is present in an app. This is just a technical requirement.
 
 ### Background task ID configuration
 

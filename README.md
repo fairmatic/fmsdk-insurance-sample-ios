@@ -17,7 +17,7 @@ Sample app for insurance implementation using the Fairmatic SDK (docs.fairmatic.
 
 ## Quick Start
 
-Follow [this]() document for a quick guide on integrating Fairmatic SDK in your app. 
+Follow [this](/integrate_fmsdk_ios.md) document for a quick guide on integrating Fairmatic SDK in your app. 
 
 ## Migrations
 

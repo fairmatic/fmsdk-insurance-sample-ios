@@ -25,8 +25,6 @@ On the project screen, click Capabilities → Turn Background Modes on → Selec
 
 If your app does not already have them, please include the following keys in your app's `Info.plist`:
 
-> Since Fairmatic imports the CoreBluetooth framework, we strongly recommend you also include a Bluetooth usage description message as shown below. Even though the SDK won't use Bluetooth, this import mandates to put this permission-related string.
-
 ```xml
 <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 <string>We need background location permission to provide you with
@@ -42,6 +40,10 @@ This also reduces the amount of battery we use.</string>
 <key>NSBluetoothPeripheralUsageDescription</key>
 <string>The application needs to use bluetooth in order to track trips accurately</string>
 ```
+
+> [!NOTE] 
+> Even though we won't actually use Bluetooth features, Apple requires this message whenever Bluetooth code is present in an app. This is just a technical requirement.
+
 
 ### Background task ID
 
