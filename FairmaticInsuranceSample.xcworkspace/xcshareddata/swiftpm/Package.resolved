@@ -1,5 +1,5 @@
 {
-  "originHash" : "99774d3858ea6a318f6aa267d5f954fcb04c730582893aeb24d5942ffb3a81f9",
+  "originHash" : "852923f7b6fc6a2dcf89bbe72d62f7e7a2aced61daba8837bee2482355c5d847",
   "pins" : [
     {
       "identity" : "aws-sdk-ios-spm",
@@ -13,10 +13,10 @@
     {
       "identity" : "fairmatic-sdk-spm",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/fairmatic/fairmatic-sdk-spm",
+      "location" : "https://github.com/fairmatic/fairmatic-sdk-spm.git",
       "state" : {
-        "revision" : "6a84f10abf5b0d1b0e752b825dc7a13c076599ae",
-        "version" : "3.0.0"
+        "revision" : "394c7adf2f8c2d5532158e94613ab5735a74fd00",
+        "version" : "2.1.0"
       }
     },
     {

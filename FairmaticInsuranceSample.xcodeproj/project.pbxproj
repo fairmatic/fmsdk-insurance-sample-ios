@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC127DDC2DA2C86B00A9FAA3 /* FairmaticSDK in Frameworks */ = {isa = PBXBuildFile; productRef = AC127DDB2DA2C86B00A9FAA3 /* FairmaticSDK */; };
 		AC3CA4712A9DCF3300135E48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3CA4702A9DCF3300135E48 /* AppDelegate.swift */; };
 		AC3CA4782A9DCF3300135E48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC3CA4762A9DCF3300135E48 /* Main.storyboard */; };
 		AC3CA47A2A9DCF3500135E48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC3CA4792A9DCF3500135E48 /* Assets.xcassets */; };
@@ -21,7 +22,6 @@
 		AC850AC32AA5901B00703D6A /* FairmaticLiteLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC850AC22AA5901B00703D6A /* FairmaticLiteLogger.swift */; };
 		AC850AC72AA5BBB800703D6A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC850AC62AA5BBB800703D6A /* Helpers.swift */; };
 		ACD3185F2BE91EA500CE4E1C /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = ACD3185E2BE91EA500CE4E1C /* MBProgressHUD */; };
-		ACD318682BEA1BC500CE4E1C /* FairmaticSDK in Frameworks */ = {isa = PBXBuildFile; productRef = ACD318672BEA1BC500CE4E1C /* FairmaticSDK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACD318682BEA1BC500CE4E1C /* FairmaticSDK in Frameworks */,
+				AC127DDC2DA2C86B00A9FAA3 /* FairmaticSDK in Frameworks */,
 				ACD3185F2BE91EA500CE4E1C /* MBProgressHUD in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,7 +150,7 @@
 			name = FairmaticInsuranceSample;
 			packageProductDependencies = (
 				ACD3185E2BE91EA500CE4E1C /* MBProgressHUD */,
-				ACD318672BEA1BC500CE4E1C /* FairmaticSDK */,
+				AC127DDB2DA2C86B00A9FAA3 /* FairmaticSDK */,
 			);
 			productName = FairmaticInsuranceSample;
 			productReference = AC3CA46D2A9DCF3300135E48 /* FairmaticInsuranceSample.app */;
@@ -182,7 +182,7 @@
 			mainGroup = AC3CA4642A9DCF3300135E48;
 			packageReferences = (
 				ACD3185D2BE91EA500CE4E1C /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
-				ACD318662BEA1BC500CE4E1C /* XCRemoteSwiftPackageReference "fairmatic-sdk-spm" */,
+				AC127DDA2DA2C86B00A9FAA3 /* XCRemoteSwiftPackageReference "fairmatic-sdk-spm" */,
 			);
 			productRefGroup = AC3CA46E2A9DCF3300135E48 /* Products */;
 			projectDirPath = "";
@@ -462,6 +462,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		AC127DDA2DA2C86B00A9FAA3 /* XCRemoteSwiftPackageReference "fairmatic-sdk-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fairmatic/fairmatic-sdk-spm";
+			requirement = {
+				kind = exactVersion;
+				version = 3.0.0;
+			};
+		};
 		ACD3185D2BE91EA500CE4E1C /* XCRemoteSwiftPackageReference "MBProgressHUD" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jdg/MBProgressHUD";
@@ -470,26 +478,18 @@
 				minimumVersion = 1.2.0;
 			};
 		};
-		ACD318662BEA1BC500CE4E1C /* XCRemoteSwiftPackageReference "fairmatic-sdk-spm" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/fairmatic/fairmatic-sdk-spm.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.1;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AC127DDB2DA2C86B00A9FAA3 /* FairmaticSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC127DDA2DA2C86B00A9FAA3 /* XCRemoteSwiftPackageReference "fairmatic-sdk-spm" */;
+			productName = FairmaticSDK;
+		};
 		ACD3185E2BE91EA500CE4E1C /* MBProgressHUD */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = ACD3185D2BE91EA500CE4E1C /* XCRemoteSwiftPackageReference "MBProgressHUD" */;
 			productName = MBProgressHUD;
-		};
-		ACD318672BEA1BC500CE4E1C /* FairmaticSDK */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = ACD318662BEA1BC500CE4E1C /* XCRemoteSwiftPackageReference "fairmatic-sdk-spm" */;
-			productName = FairmaticSDK;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

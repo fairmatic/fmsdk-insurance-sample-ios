@@ -45,7 +45,7 @@ final class SignUpViewController: UIViewController {
         driverIdTextField.resignFirstResponder()
         let driverId = driverIdTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        guard let driverId = driverId, !driverId.isEmpty, Fairmatic.isValidInputParameter(driverId) else {
+        guard let driverId = driverId, !driverId.isEmpty else {
             showInvalidDriverAlert()
             return
         }
