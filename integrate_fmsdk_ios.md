@@ -8,11 +8,22 @@
 
 ## SDK Installation
 
+### Cocoapods
+
 In your Podfile, add the following line
 ```ruby
 pod 'FairmaticSDK', :git => 'https://github.com/fairmatic/fairmatic-cocoapods', :tag => '3.0.0'
 ```
-and run the pod install command
+and run the `pod install` command
+
+### Swift Package Manager
+
+- Open your project in Xcode 16.0 or above
+- Go to File > Swift Packages > Add Package Dependency...
+- In the field Enter package repository URL, enter https://github.com/fairmatic/fairmatic-sdk-spm
+- Pick the latest version (3.x) and click Next.
+- Click Finish
+- Add the `-ObjC` flag to the Other Linker Flags section of your target's build settings.
 
 ## Adjusting project settings
 
