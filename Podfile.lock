@@ -2,31 +2,31 @@ PODS:
   - AWSCore (2.34.2)
   - AWSSQS (2.34.2):
     - AWSCore (= 2.34.2)
-  - DriveKitBeaconUtils (2.13.2):
-    - DriveKitCore (= 2.13.2)
-  - DriveKitCore (2.13.2):
-    - DriveKitNetworking (= 2.13.2)
-  - DriveKitDBTripAccess (2.13.2):
-    - DriveKitCore (= 2.13.2)
-  - DriveKitDBVehicleAccess (2.13.2):
-    - DriveKitBeaconUtils (= 2.13.2)
-    - DriveKitCore (= 2.13.2)
-  - DriveKitNetworking (2.13.2)
-  - DriveKitTripAnalysis (2.13.2):
-    - DriveKitBeaconUtils (= 2.13.2)
-    - DriveKitCore (= 2.13.2)
-    - DriveKitDBTripAccess (= 2.13.2)
-    - DriveKitDBVehicleAccess (= 2.13.2)
-  - FairmaticSDK (3.0.0):
-    - FairmaticSDK/Standard (= 3.0.0)
-  - FairmaticSDK/Standard (3.0.0):
+  - DriveKitBeaconUtils (2.17.0):
+    - DriveKitCore (= 2.17.0)
+  - DriveKitCore (2.17.0):
+    - DriveKitNetworking (= 2.17.0)
+  - DriveKitDBTripAccess (2.17.0):
+    - DriveKitCore (= 2.17.0)
+  - DriveKitDBVehicleAccess (2.17.0):
+    - DriveKitBeaconUtils (= 2.17.0)
+    - DriveKitCore (= 2.17.0)
+  - DriveKitNetworking (2.17.0)
+  - DriveKitTripAnalysis (2.17.0):
+    - DriveKitBeaconUtils (= 2.17.0)
+    - DriveKitCore (= 2.17.0)
+    - DriveKitDBTripAccess (= 2.17.0)
+    - DriveKitDBVehicleAccess (= 2.17.0)
+  - FairmaticSDK (3.0.1):
+    - FairmaticSDK/Standard (= 3.0.1)
+  - FairmaticSDK/Standard (3.0.1):
     - AWSCore (~> 2.34.2)
     - AWSSQS (~> 2.34.2)
-    - DriveKitTripAnalysis (= 2.13.2)
+    - DriveKitTripAnalysis (= 2.17.0)
   - MBProgressHUD (1.2.0)
 
 DEPENDENCIES:
-  - FairmaticSDK (from `https://github.com/fairmatic/fairmatic-cocoapods`, tag `3.0.0`)
+  - FairmaticSDK (from `https://github.com/fairmatic/fairmatic-cocoapods`, tag `3.0.1`)
   - MBProgressHUD (= 1.2.0)
 
 SPEC REPOS:
@@ -44,25 +44,25 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   FairmaticSDK:
     :git: https://github.com/fairmatic/fairmatic-cocoapods
-    :tag: 3.0.0
+    :tag: 3.0.1
 
 CHECKOUT OPTIONS:
   FairmaticSDK:
     :git: https://github.com/fairmatic/fairmatic-cocoapods
-    :tag: 3.0.0
+    :tag: 3.0.1
 
 SPEC CHECKSUMS:
   AWSCore: 13649d9063a6807ec37bde35c8f2da329d63d4e2
   AWSSQS: 83192c91ef1dc8682cec17e83d6dcc7380715dd0
-  DriveKitBeaconUtils: ecc496a0810f589c192183b94c6045a11c1eea65
-  DriveKitCore: 48cfb2bf73ed09acd73800ecb4f2c71ee1e162c3
-  DriveKitDBTripAccess: a2feb10283bf6e34607cfcf8f6aecf7adfbdd6b8
-  DriveKitDBVehicleAccess: 2660a0ea4f196adbb9db4481d2d55a7ee775f24d
-  DriveKitNetworking: d0999e1c783ad9b93d3bdd824c02fc309bcb041b
-  DriveKitTripAnalysis: ccfbf703e40f23d676c083fb6be85ce41bf14897
-  FairmaticSDK: dbe2553960e76328eae9b6db1cc06be24325f5a5
+  DriveKitBeaconUtils: baf0da8765f21f73aa0a82ce060b43a8b2851182
+  DriveKitCore: 50e4dffbcbf8509e520bf2e52fa136988dc7c3bb
+  DriveKitDBTripAccess: 235580630d86086533fb9ec117a1a9090efc3f1d
+  DriveKitDBVehicleAccess: 33931bdb52f2ea52877f9f70eb9784836b4ee349
+  DriveKitNetworking: f925effdd45bb01c03a2df51a541260083c9df33
+  DriveKitTripAnalysis: cf8feacbbfba539c940df5be2cd87d9ddcb53889
+  FairmaticSDK: d40eb021d6de53fbb803f43f9d727238189081dc
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
 
-PODFILE CHECKSUM: 919c82acb77dae890dff6b02a8c63717c266cd8c
+PODFILE CHECKSUM: 25ed8ffb6133f5a38b715197f0e74195c65389c8
 
 COCOAPODS: 1.15.2
