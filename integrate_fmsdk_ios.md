@@ -12,7 +12,7 @@
 
 In your Podfile, add the following line
 ```ruby
-pod 'FairmaticSDK', :git => 'https://github.com/fairmatic/fairmatic-cocoapods', :tag => '3.0.0'
+pod 'FairmaticSDK', :git => 'https://github.com/fairmatic/fairmatic-cocoapods', :tag => '3.0.1'
 ```
 and run the `pod install` command
 

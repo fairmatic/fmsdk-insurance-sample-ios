@@ -9,7 +9,7 @@ If you are using Zendrive SDK, this guide will help you with the quick steps you
 
 In your Podfile, remove the Zendrive dependency and add the Fairmatic SDK dependency using:
 ```ruby
-pod 'FairmaticSDK', :git => 'https://github.com/fairmatic/fairmatic-cocoapods', :tag => '3.0.0'
+pod 'FairmaticSDK', :git => 'https://github.com/fairmatic/fairmatic-cocoapods', :tag => '3.0.1'
 ```
 and run the pod install command
 
@@ -17,7 +17,7 @@ and run the pod install command
 
 ### Changes to Background Modes
 
-The `3.0.0` uses background fetch in addition to background location to ensure the smooth and timely uploads of trips.
+The `3.x` uses background fetch in addition to background location to ensure the smooth and timely uploads of trips.
 Allow background background fetch for your app:
 On the project screen, click Capabilities → Turn Background Modes on → Select Background Fetch
 
