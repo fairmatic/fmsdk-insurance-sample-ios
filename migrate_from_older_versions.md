@@ -4,9 +4,9 @@ If you are already using Fairmatic SDK 1.x or 2.x, this guide will help you with
 
 ## Latest SDK installation
 
-In your Podfile, change the version to `3.0.0`:
+In your Podfile, change the version to `3.0.1`:
 ```ruby
-pod 'FairmaticSDK', :git => 'https://github.com/fairmatic/fairmatic-cocoapods', :tag => '3.0.0'
+pod 'FairmaticSDK', :git => 'https://github.com/fairmatic/fairmatic-cocoapods', :tag => '3.0.1'
 ```
 and run the pod install command
 
@@ -14,7 +14,7 @@ and run the pod install command
 
 ### Changes to Background Modes
 
-The `3.0.0` uses background fetch in addition to background location to ensure the smooth and timely uploads of trips.
+The `3.x` uses background fetch in addition to background location to ensure the smooth and timely uploads of trips.
 Allow background fetch for your app:
 On the project screen, click Capabilities → Turn Background Modes on → Select Background Fetch
 
