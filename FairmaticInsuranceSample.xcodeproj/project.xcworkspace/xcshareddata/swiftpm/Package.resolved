@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/fairmatic/fairmatic-sdk-spm",
       "state" : {
-        "revision" : "6a84f10abf5b0d1b0e752b825dc7a13c076599ae",
-        "version" : "3.0.0"
+        "revision" : "4185a349cffdf41c9871cdd412f26e31d22bc534",
+        "version" : "3.0.1"
       }
     },
     {

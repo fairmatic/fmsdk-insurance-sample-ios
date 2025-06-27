@@ -467,7 +467,7 @@
 			repositoryURL = "https://github.com/fairmatic/fairmatic-sdk-spm";
 			requirement = {
 				kind = exactVersion;
-				version = 3.0.0;
+				version = 3.0.1;
 			};
 		};
 		ACD3185D2BE91EA500CE4E1C /* XCRemoteSwiftPackageReference "MBProgressHUD" */ = {
