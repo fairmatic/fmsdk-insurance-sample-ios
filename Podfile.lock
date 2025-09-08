@@ -17,16 +17,16 @@ PODS:
     - DriveKitCore (= 2.17.0)
     - DriveKitDBTripAccess (= 2.17.0)
     - DriveKitDBVehicleAccess (= 2.17.0)
-  - FairmaticSDK (3.0.1):
-    - FairmaticSDK/Standard (= 3.0.1)
-  - FairmaticSDK/Standard (3.0.1):
+  - FairmaticSDK (3.1.0):
+    - FairmaticSDK/Standard (= 3.1.0)
+  - FairmaticSDK/Standard (3.1.0):
     - AWSCore (~> 2.34.2)
     - AWSSQS (~> 2.34.2)
     - DriveKitTripAnalysis (= 2.17.0)
   - MBProgressHUD (1.2.0)
 
 DEPENDENCIES:
-  - FairmaticSDK (from `https://github.com/fairmatic/fairmatic-cocoapods`, tag `3.0.1`)
+  - FairmaticSDK (from `https://github.com/fairmatic/fairmatic-cocoapods`, tag `3.1.0`)
   - MBProgressHUD (= 1.2.0)
 
 SPEC REPOS:
@@ -44,12 +44,12 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   FairmaticSDK:
     :git: https://github.com/fairmatic/fairmatic-cocoapods
-    :tag: 3.0.1
+    :tag: 3.1.0
 
 CHECKOUT OPTIONS:
   FairmaticSDK:
     :git: https://github.com/fairmatic/fairmatic-cocoapods
-    :tag: 3.0.1
+    :tag: 3.1.0
 
 SPEC CHECKSUMS:
   AWSCore: 13649d9063a6807ec37bde35c8f2da329d63d4e2
@@ -60,9 +60,9 @@ SPEC CHECKSUMS:
   DriveKitDBVehicleAccess: 33931bdb52f2ea52877f9f70eb9784836b4ee349
   DriveKitNetworking: f925effdd45bb01c03a2df51a541260083c9df33
   DriveKitTripAnalysis: cf8feacbbfba539c940df5be2cd87d9ddcb53889
-  FairmaticSDK: d40eb021d6de53fbb803f43f9d727238189081dc
+  FairmaticSDK: 9c9d5059b8812d11d1dd37e20e18312bbd6ddc05
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
 
-PODFILE CHECKSUM: 25ed8ffb6133f5a38b715197f0e74195c65389c8
+PODFILE CHECKSUM: 5d17434558a3b19a4d0a7d999d9eea0dfd567d2b
 
 COCOAPODS: 1.15.2
