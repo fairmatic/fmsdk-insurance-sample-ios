@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Ha-md-2fn">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Ha-md-2fn">
+    <device id="retina6_3" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -15,11 +16,11 @@
             <objects>
                 <viewController storyboardIdentifier="OffDutyViewController" id="BYZ-38-t0r" customClass="OffDutyViewController" customModule="FairmaticInsuranceSample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53X-Az-K2C">
-                                <rect key="frame" x="16" y="224" width="361" height="64"/>
+                                <rect key="frame" x="16" y="289" width="370" height="64"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="bmH-0b-KP8"/>
@@ -32,7 +33,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click the below button when you are ready to go on duty!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4P-CS-LFW">
-                                <rect key="frame" x="12" y="133" width="369" height="43"/>
+                                <rect key="frame" x="12" y="198" width="378" height="43"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -62,35 +63,35 @@
             <objects>
                 <viewController storyboardIdentifier="OnDutyViewController" id="FDa-jq-2C0" customClass="OnDutyViewController" customModule="FairmaticInsuranceSample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xZ9-WB-ejv">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passenger in car - FALSE" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KYu-7f-yMH">
-                                <rect key="frame" x="12" y="95" width="369" height="21.666666666666671"/>
+                                <rect key="frame" x="12" y="148" width="378" height="21.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passenger waiting for pickup - FALSE" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24a-bN-ysH">
-                                <rect key="frame" x="12" y="132.66666666666666" width="369" height="21.666666666666657"/>
+                                <rect key="frame" x="12" y="185.66666666666666" width="378" height="21.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insurance period - 3" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7eo-ro-Dzs">
-                                <rect key="frame" x="12" y="178.33333333333334" width="369" height="25.333333333333343"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <rect key="frame" x="12" y="231.33333333333334" width="378" height="23"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="vJo-uw-t3r">
-                                <rect key="frame" x="18" y="223.66666666666663" width="357" height="298"/>
+                                <rect key="frame" x="18" y="270.33333333333331" width="366" height="301.99999999999994"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Njn-NO-P4m">
-                                        <rect key="frame" x="0.0" y="0.0" width="357" height="64"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="366" height="48"/>
                                         <color key="backgroundColor" name="AccentColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="64" id="TMf-2w-vFA"/>
+                                            <constraint firstAttribute="height" constant="48" id="TMf-2w-vFA"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
@@ -100,11 +101,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2s-1O-44F">
-                                        <rect key="frame" x="0.0" y="78.000000000000028" width="357" height="64"/>
+                                        <rect key="frame" x="0.0" y="62" width="366" height="48"/>
                                         <color key="backgroundColor" name="AccentColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="64" id="JAk-2h-VVz"/>
-                                        </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Pickup a passenger"/>
@@ -113,11 +111,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cfa-i5-4JM">
-                                        <rect key="frame" x="0.0" y="156.00000000000003" width="357" height="64"/>
+                                        <rect key="frame" x="0.0" y="124" width="366" height="48"/>
                                         <color key="backgroundColor" name="AccentColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="64" id="kq4-kF-kgE"/>
-                                        </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Cancel a request "/>
@@ -126,11 +121,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMk-wr-GVo">
-                                        <rect key="frame" x="0.0" y="234" width="357" height="64"/>
+                                        <rect key="frame" x="0.0" y="186" width="366" height="48"/>
                                         <color key="backgroundColor" name="AccentColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="64" id="ZnK-gw-qPJ"/>
-                                        </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Drop a passenger"/>
@@ -138,13 +130,33 @@
                                             <action selector="dropPassengerButtonTapped:" destination="FDa-jq-2C0" eventType="touchUpInside" id="gbn-be-opF"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wtl-Qx-EdC" customClass="GradientUIButton" customModule="FairmaticInsuranceSample" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="248.00000000000006" width="366" height="54"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="54" id="1dE-vp-QcM"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" imagePlacement="trailing" title="Report an Incident" imagePadding="8">
+                                            <imageReference key="image" image="safari" catalog="system" symbolScale="default"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="reportIncidentTapped:" destination="FDa-jq-2C0" eventType="touchUpInside" id="kGm-uw-Uh4"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="Cfa-i5-4JM" firstAttribute="height" secondItem="l2s-1O-44F" secondAttribute="height" id="8Gh-nE-H3a"/>
+                                    <constraint firstItem="l2s-1O-44F" firstAttribute="height" secondItem="Njn-NO-P4m" secondAttribute="height" id="gBB-PB-ycF"/>
+                                    <constraint firstItem="HMk-wr-GVo" firstAttribute="height" secondItem="Cfa-i5-4JM" secondAttribute="height" id="sAz-YB-WGz"/>
+                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJP-XS-88k">
-                                <rect key="frame" x="16" y="561.66666666666663" width="361" height="64"/>
+                                <rect key="frame" x="16" y="596.33333333333337" width="370" height="48"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="Bdm-Qv-3tq"/>
+                                    <constraint firstAttribute="height" constant="48" id="Bdm-Qv-3tq"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -157,19 +169,19 @@
                         <viewLayoutGuide key="safeArea" id="hws-hK-sr5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="KYu-7f-yMH" firstAttribute="top" secondItem="hws-hK-sr5" secondAttribute="top" constant="36" id="GbM-Rn-ttG"/>
+                            <constraint firstItem="KYu-7f-yMH" firstAttribute="top" secondItem="hws-hK-sr5" secondAttribute="top" constant="24" id="GbM-Rn-ttG"/>
                             <constraint firstItem="hws-hK-sr5" firstAttribute="trailing" secondItem="dJP-XS-88k" secondAttribute="trailing" constant="16" id="Ko5-qK-hzm"/>
                             <constraint firstItem="7eo-ro-Dzs" firstAttribute="trailing" secondItem="24a-bN-ysH" secondAttribute="trailing" id="Q6V-E6-Reb"/>
                             <constraint firstItem="7eo-ro-Dzs" firstAttribute="leading" secondItem="24a-bN-ysH" secondAttribute="leading" id="UK5-hJ-gsX"/>
                             <constraint firstItem="hws-hK-sr5" firstAttribute="trailing" secondItem="KYu-7f-yMH" secondAttribute="trailing" constant="12" id="YRV-qG-B57"/>
                             <constraint firstItem="24a-bN-ysH" firstAttribute="leading" secondItem="KYu-7f-yMH" secondAttribute="leading" id="b1l-Xd-LO6"/>
-                            <constraint firstItem="vJo-uw-t3r" firstAttribute="top" secondItem="7eo-ro-Dzs" secondAttribute="bottom" constant="20" id="bWj-TA-x9t"/>
+                            <constraint firstItem="vJo-uw-t3r" firstAttribute="top" secondItem="7eo-ro-Dzs" secondAttribute="bottom" constant="16" id="bWj-TA-x9t"/>
                             <constraint firstItem="24a-bN-ysH" firstAttribute="trailing" secondItem="KYu-7f-yMH" secondAttribute="trailing" id="dkZ-iR-Ict"/>
                             <constraint firstItem="KYu-7f-yMH" firstAttribute="leading" secondItem="hws-hK-sr5" secondAttribute="leading" constant="12" id="j9r-b6-vwd"/>
                             <constraint firstItem="24a-bN-ysH" firstAttribute="top" secondItem="KYu-7f-yMH" secondAttribute="bottom" constant="16" id="jl8-Jb-AN7"/>
                             <constraint firstItem="vJo-uw-t3r" firstAttribute="leading" secondItem="hws-hK-sr5" secondAttribute="leading" constant="18" id="kiE-bm-KOw"/>
                             <constraint firstItem="dJP-XS-88k" firstAttribute="leading" secondItem="hws-hK-sr5" secondAttribute="leading" constant="16" id="vog-Nh-hLM"/>
-                            <constraint firstItem="dJP-XS-88k" firstAttribute="top" secondItem="vJo-uw-t3r" secondAttribute="bottom" constant="40" id="x7M-x4-Iha"/>
+                            <constraint firstItem="dJP-XS-88k" firstAttribute="top" secondItem="vJo-uw-t3r" secondAttribute="bottom" constant="24" id="x7M-x4-Iha"/>
                             <constraint firstItem="hws-hK-sr5" firstAttribute="trailing" secondItem="vJo-uw-t3r" secondAttribute="trailing" constant="18" id="ynC-7Q-I6W"/>
                             <constraint firstItem="7eo-ro-Dzs" firstAttribute="top" secondItem="24a-bN-ysH" secondAttribute="bottom" constant="24" id="zW2-Me-zve"/>
                         </constraints>
@@ -183,6 +195,7 @@
                         <outlet property="passengerInCarLabel" destination="KYu-7f-yMH" id="IQs-R6-idw"/>
                         <outlet property="passengerWaitingLabel" destination="24a-bN-ysH" id="nJu-QE-FK2"/>
                         <outlet property="pickupPassengerButton" destination="l2s-1O-44F" id="rza-un-f2K"/>
+                        <outlet property="reportIncidentButton" destination="Wtl-Qx-EdC" id="XFr-BU-dco"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPn-rz-JvJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -194,16 +207,16 @@
             <objects>
                 <viewController storyboardIdentifier="SignUpViewController" id="3Ha-md-2fn" customClass="SignUpViewController" customModule="FairmaticInsuranceSample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l5b-Kh-9gB">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the driver ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GtU-i1-HNv">
-                                <rect key="frame" x="18" y="198" width="357" height="34"/>
+                                <rect key="frame" x="18" y="263" width="366" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5d-Uc-iyM">
-                                <rect key="frame" x="16" y="733" width="361" height="64"/>
+                                <rect key="frame" x="16" y="721" width="370" height="64"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="hd3-8d-oXy"/>
@@ -216,7 +229,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NRn-XK-W2K">
-                                <rect key="frame" x="12" y="131" width="369" height="43"/>
+                                <rect key="frame" x="12" y="196" width="378" height="43"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="36"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -247,11 +260,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="safari" catalog="system" width="128" height="123"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

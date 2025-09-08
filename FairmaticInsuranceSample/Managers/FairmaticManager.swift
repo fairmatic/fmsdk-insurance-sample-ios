@@ -53,6 +53,22 @@ final class FairmaticManager: NSObject {
         log.debug("Stopping period")
         Fairmatic.stopPeriod(completion)
     }
+    
+    func openReportIncidentFlow(
+        completion: @escaping FairmaticCompletionHandler
+    ) {
+        log.debug("Report incident flow requested")
+    
+        Fairmatic.openIncidentReportingWebPage { error in
+            if let error {
+                log.error("Error in opening incident reporting webpage: \(error.localizedDescription)")
+                completion(false, error)
+            } else {
+                log.debug("Incident reporting webpage opened successfully")
+                completion(true, nil)
+            }
+        }
+    }
 }
 
 private extension FairmaticManager {
