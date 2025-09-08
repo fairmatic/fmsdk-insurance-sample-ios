@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 extension OnDutyViewController {
     static func instantiateFromStoryboard() -> Self {
@@ -29,7 +30,8 @@ final class OnDutyViewController: UIViewController {
     @IBOutlet private weak var cancelRequestButton: UIButton!
     @IBOutlet private weak var dropPassengerButton: UIButton!
     @IBOutlet private weak var goOffDutyButton: UIButton!
-    
+    @IBOutlet weak var reportIncidentButton: GradientUIButton!
+
     weak var delegate: OnDutyViewControllerDelegate?
     
     private let fairmaticUserDefaults = FairmaticInsuranceUserDefaults.shared
@@ -43,6 +45,14 @@ final class OnDutyViewController: UIViewController {
             $0?.layer.cornerRadius = 8
             $0?.setTitleColor(.white, for: .disabled)
         }
+        
+        reportIncidentButton.layer.cornerRadius = 15
+        let gradientColors = [
+            UIColor(named: "incidentButtonStart") ?? UIColor.systemBlue,
+            UIColor(named: "incidentButtonEnd") ?? UIColor.systemTeal
+        ]
+        
+        reportIncidentButton.addGradient(colors: gradientColors)
         
         refreshUI()
     }
@@ -120,6 +130,19 @@ final class OnDutyViewController: UIViewController {
         }
         
         self.delegate?.driverDidRequestToGoOffDuty()
+    }
+    
+    
+    @IBAction func reportIncidentTapped(_ sender: Any) {
+        showLoader()
+        fairmaticManager.openReportIncidentFlow { [weak self] success, error in
+            self?.hideLoader()
+            if success {
+                log.debug("Report incident flow opened successfully")
+            } else {
+                log.error("Failed to open report incident flow, error: \(error!.localizedDescription)")
+            }
+        }
     }
 }
 
@@ -208,5 +231,13 @@ private extension OnDutyViewController {
         ].forEach {
             $0.alpha = $0.isEnabled ? 1.0 : 0.5
         }
+    }
+    
+    func showLoader() {
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+    }
+    
+    func hideLoader() {
+        MBProgressHUD.hide(for: self.view, animated: true)
     }
 }

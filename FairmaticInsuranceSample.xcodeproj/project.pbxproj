@@ -21,6 +21,7 @@
 		AC769FA82AA1FB7B00BCAF34 /* UIStoryboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC769FA72AA1FB7B00BCAF34 /* UIStoryboard+Extensions.swift */; };
 		AC850AC32AA5901B00703D6A /* FairmaticLiteLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC850AC22AA5901B00703D6A /* FairmaticLiteLogger.swift */; };
 		AC850AC72AA5BBB800703D6A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC850AC62AA5BBB800703D6A /* Helpers.swift */; };
+		ACE3729A2E6EDFB1002F00E7 /* GradientUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE372992E6EDFB1002F00E7 /* GradientUIButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		AC769FA72AA1FB7B00BCAF34 /* UIStoryboard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extensions.swift"; sourceTree = "<group>"; };
 		AC850AC22AA5901B00703D6A /* FairmaticLiteLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairmaticLiteLogger.swift; sourceTree = "<group>"; };
 		AC850AC62AA5BBB800703D6A /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		ACE372992E6EDFB1002F00E7 /* GradientUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientUIButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		AC769FA62AA1FB6300BCAF34 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				ACE372992E6EDFB1002F00E7 /* GradientUIButton.swift */,
 				AC769FA72AA1FB7B00BCAF34 /* UIStoryboard+Extensions.swift */,
 			);
 			path = Extensions;
@@ -229,9 +232,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-FairmaticInsuranceSample/Pods-FairmaticInsuranceSample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-FairmaticInsuranceSample/Pods-FairmaticInsuranceSample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -274,6 +281,7 @@
 				AC769F9C2AA0C2A800BCAF34 /* FairmaticManager.swift in Sources */,
 				AC769F982AA0BD4A00BCAF34 /* OnDutyViewController.swift in Sources */,
 				AC769F942AA0BB2800BCAF34 /* FairmaticInsuranceUserDefaults.swift in Sources */,
+				ACE3729A2E6EDFB1002F00E7 /* GradientUIButton.swift in Sources */,
 				AC850AC72AA5BBB800703D6A /* Helpers.swift in Sources */,
 				AC769FA82AA1FB7B00BCAF34 /* UIStoryboard+Extensions.swift in Sources */,
 				AC3CA4712A9DCF3300135E48 /* AppDelegate.swift in Sources */,
